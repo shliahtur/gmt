@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Avenir Heavy';
+    src: local('Avenir Heavy'), local('Avenir-Heavy'),
+        url('./font/Avenir-Heavy.woff2') format('woff2'),
+        url('./font/Avenir-Heavy.woff') format('woff'),
+        url('./font/Avenir-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
+@font-face {
+font-family: 'Avenir Medium';
+src: local('Avenir Medium'), local('Avenir-Medium'),
+    url('./font/Avenir-Medium.woff2') format('woff2'),
+    url('./font/Avenir-Medium.woff') format('woff'),
+    url('./font/Avenir-Medium.ttf') format('truetype');
+font-weight: 500;
+font-style: normal;
+}
+
+body{
+    font-family: "Avenir" sans-serif;
+}
+
+.container{
+    width: 1440px;
+    margin: auto;
+}
+.header{
+    position: relative;
+}
+.header-logo{
+    background: url('./img/logo.svg') no-repeat;
+    height: 25px;
+    width: 92px;
+    background-size: 75px;
+    position: absolute;
+    left: 80px;
+    top: 26px;
+}
+.header-menu{
+    height: 84px;
+    font-family: "Avenir Medium";
+    font-size: 14px;
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+}
+.header-menu-items{
+    width: 340px;
+    margin-right: 40px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+button{
+    font-family: "Avenir Medium";
+    font-size: 14px;
+    width: 138px;
+    height: 32px;  
+    border-radius: 4px;
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #F27931 0%, #F27931 0.01%, #F2A135 110.55%);
+}
