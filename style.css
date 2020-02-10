@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url("../css/reset.css");
 @font-face {
     font-family: 'Avenir Heavy';
     src: local('Avenir Heavy'), local('Avenir-Heavy'),
@@ -18,14 +20,14 @@ font-style: normal;
 }
 :root {
     --gradient: linear-gradient(90deg, #F27931 0%, #F27931 0.01%, #F2A135 110.55%);
+    --font: #2B3D5C;
+    --orange: #F27931;
   }
 body{
     font-family: "Avenir" sans-serif;
 }
-
 a{
-    text-decoration: none;
-    color: black;
+    color: var(--font);
 }
 button{
     font-family: "Avenir Medium";
@@ -40,37 +42,45 @@ button{
     background: var(--gradient);
 }
 .container{
-    width: 1440px;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.wr{
+    max-width: 1440px;
+    height: 100%;
     margin: auto;
 }
 .header{
-    position: relative;
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
 }
 .header-logo{
     background: url('./img/logo.svg') no-repeat;
     height: 25px;
     width: 92px;
     background-size: 74px;
-    position: absolute;
+    /* position: absolute; */
     left: 80px;
     top: 26px;
+    display: inline-block;
 }
 .header-menu{
-    height: 84px;
+    /* height: 84px; */
     font-family: "Avenir Medium";
     font-size: 14px;
-    position: absolute;
-    right: 40px;
-    display: flex;
-    align-items: center;
+    /* position: absolute; */
+    /* right: 40px; */
+    /* display: flex; */
+    /* align-items: center; */
+    float: right;
 }
 .header-menu-items{
-    height: 100%;
     width: 340px;
     margin-right: 40px;
     display: flex;
     list-style: none;
-    align-items: center;
     justify-content: space-between;
 }
 .header-menu-item{
@@ -79,15 +89,42 @@ button{
     height: 100%;
 }
 
-.header-menu-item-active{
+.header-menu-item:focus-within{
     font-weight: bold;
 }
-.header-menu-item-active::before{
+.header-menu-item:focus-within::before{
     content: "";
     display: block;
     position: absolute;
-    top: 0;
-    height: 3px;
+    bottom: 45px;
+    height: 4px;
     width: 100%;
     background: var(--gradient);
+}
+.header-title{
+    font-family: 'Lora', serif;
+    font-size: 46px;
+    font-weight: bold;
+    color: var(--orange);
+    text-align: center;
+
+}
+.header-main{
+    margin-top: 84px;
+    padding: 176px 0;
+    width: 100%;
+    background: url("/img/main-pic.jpg");
+    background-size: cover;
+    background-position: center;
+    max-height: 576px;
+}
+.header-description{
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 50px 0;
+    text-align: center;
+    color: #FFFFFF;
 }
