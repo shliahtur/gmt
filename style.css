@@ -29,6 +29,18 @@ body{
 a{
     color: var(--font);
 }
+h2{
+    font-family: Lora;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 44px;
+    /* identical to box height, or 137% */
+    
+    text-align: center;
+    
+    color: #2B3D5C;  
+}
 button{
     font-family: "Avenir Medium";
     font-size: 14px;
