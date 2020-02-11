@@ -23,6 +23,9 @@ font-style: normal;
     --font: #2B3D5C;
     --orange: #F27931;
   }
+.orange{
+    color:  #F27931;
+}
 body{
     font-family: "Avenir" sans-serif;
 }
@@ -36,7 +39,7 @@ h2{
     font-size: 32px;
     line-height: 44px;
     text-align: center;
-    color: #2B3D5C;  
+    color: var(--font);  
     margin-bottom: 40px;
 }
 button{
@@ -60,6 +63,7 @@ button{
 .wr{
     max-width: 1440px;
     height: 100%;
+    padding: 60px;
     margin: auto;
 }
 .header{
@@ -172,7 +176,7 @@ button{
     font-weight: 800;
     font-size: 24px;
     line-height: 32px;
-    color: #2B3D5C;
+    color: var(--font);
 }
 .key-item-text{
     font-family: "Avenir";
@@ -184,30 +188,73 @@ button{
     color: #58657D;
 }
 .about-us-wr{
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
     /* flex-wrap: wrap; */
 }
 .about-us-image{
-    /* flex: 1 50%; */
+    /* display: inline-block; */
     background: url('img/about-us-pic.jpg') no-repeat;
-    background-size:  contain;
-    width: 100%;
+    background-size:  cover;
+    width: 50%;
     height: 316px;
     border-radius: 8px;
 }
 .about-us-main{
-    /* padding: 10px; */
-    /* flex: 2 */
+    width: 50%;
+    padding: 40px;
 }
 .about-us-heading{
+    
     font-family: "Avenir";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -1px;
-    color: #2B3D5C;
+    color: var(--font);
+}
+.calculator{
+    padding: 40px;
+    height: 800px;
+    background: #F8FCFE;
+}
+.service-wr{
+    max-width: 632px;
+    max-height: 304px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #E6E8EA;
+    box-sizing: border-box;
+}
+.table{
+    border: 1px solid #E6E8EA;
+    box-sizing: border-box;
+}
+.table-heading{
+    background: #041E30;
+    height: 64px;
+    padding: 0px 32px;
+    font-size: 16px;
+    line-height: 64px;
+    color: white;
+}
+.table-item{
+    list-style-type: disc; 
+    padding: 0 28px;
+    list-style-position: inside;
+    height: 48px;
+    color: var(--orange);
+    line-height: 48px;
+    font-size: 28px;
+    border-bottom: 1px solid #E6E8EA;
+}
+.table-text{
+
+    font-size: 14px;
+    color: var(--font);
+
 }
