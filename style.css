@@ -136,7 +136,7 @@ button{
 
 }
 .header-description{
-    font-family: "Avenir";
+    font-family: "Avenir Medium";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -179,7 +179,7 @@ button{
     color: var(--font);
 }
 .key-item-text{
-    font-family: "Avenir";
+    font-family: "Avenir Medium";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -212,8 +212,7 @@ button{
     padding-left: 40px;
 }
 .about-us-heading{
-    
-    font-family: "Avenir";
+    font-family: "Avenir Medium";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -225,6 +224,16 @@ button{
     padding: 40px;
     height: 800px;
     background: #F8FCFE;
+}
+.calc-form{
+    font-family: "Avenir Medium";
+    width: 740px;
+    padding: 40px;
+    background: white;  
+}
+.calc-item-heading{
+    font-size: 24px;
+    color: var(--orange);
 }
 .service-wr{
     max-width: 632px;
