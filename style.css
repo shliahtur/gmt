@@ -1,16 +1,8 @@
 @charset "UTF-8";
 @import url("../css/reset.css");
+
 @font-face {
-    font-family: 'Avenir Heavy';
-    src: local('Avenir Heavy'), local('Avenir-Heavy'),
-        url('./font/Avenir-Heavy.woff2') format('woff2'),
-        url('./font/Avenir-Heavy.woff') format('woff'),
-        url('./font/Avenir-Heavy.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-  }
-@font-face {
-font-family: 'Avenir Medium';
+font-family: 'Avenir';
 src: local('Avenir Medium'), local('Avenir-Medium'),
     url('./font/Avenir-Medium.woff2') format('woff2'),
     url('./font/Avenir-Medium.woff') format('woff'),
@@ -18,6 +10,24 @@ src: local('Avenir Medium'), local('Avenir-Medium'),
 font-weight: 500;
 font-style: normal;
 }
+@font-face {
+    font-family: 'Avenir';
+    src: local('Avenir Roman'), local('Avenir-Roman'),
+        url('./font/Avenir-Roman.woff2') format('woff2'),
+        url('./font/Avenir-Roman.woff') format('woff'),
+        url('./font/Avenir-Roman.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Avenir';
+    src: local('Avenir Heavy'), local('Avenir-Heavy'),
+        url('./font/Avenir-Heavy.woff2') format('woff2'),
+        url('./font/Avenir-Heavy.woff') format('woff'),
+        url('./font/Avenir-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }
 :root {
     --gradient: linear-gradient(90deg, #F27931 0%, #F27931 0.01%, #F2A135 110.55%);
     --font: #2B3D5C;
@@ -33,7 +43,7 @@ a{
     color: var(--font);
 }
 h2{
-    font-family: 'Avenir Medium';
+    font-family: 'Avenir';
     font-style: normal;
     font-weight: bold;
     font-size: 32px;
@@ -41,9 +51,10 @@ h2{
     text-align: center;
     color: var(--font);  
     margin-bottom: 40px;
+    font-weight: 500;
 }
 button{
-    font-family: "Avenir Medium";
+    font-family: "Avenir";
     font-size: 14px;
     /* width: 138px; */
     height: 32px;
@@ -54,6 +65,8 @@ button{
     outline: none;
     cursor: pointer;
     background: var(--gradient);
+    font-weight: 500;
+
 }
 .container{
     width: 100%;
@@ -83,13 +96,15 @@ button{
 }
 .header-menu{
     /* height: 84px; */
-    font-family: "Avenir Medium";
+    font-family: "Avenir";
     font-size: 14px;
     /* position: absolute; */
     /* right: 40px; */
     /* display: flex; */
     /* align-items: center; */
     float: right;
+    font-weight: 500;
+
 }
 .header-menu-items{
     width: 340px;
@@ -117,11 +132,12 @@ button{
     background: var(--gradient);
 }
 .header-title{
-    font-family: 'Avenir Medium', serif;
+    font-family: 'Avenir', serif;
     font-size: 46px;
     font-weight: bold;
     color: var(--orange);
     text-align: center;
+    font-weight: 500;
 
 }
 .header-main{
@@ -136,7 +152,7 @@ button{
 
 }
 .header-description{
-    font-family: "Avenir Medium ";
+    font-family: "Avenir";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -144,6 +160,8 @@ button{
     margin: 50px 0;
     text-align: center;
     color: #FFFFFF;
+    font-weight: 500;
+
 }
 #calc-button{
     margin: 0 auto;
@@ -170,29 +188,33 @@ button{
 
 }
 .key-item-heading{
-    margin: 30px 0;
-    font-family: "Avenir Medium";
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: "Avenir";
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
     line-height: 32px;
     color: var(--font);
+    font-weight: 800;
+
 }
 .key-item-text{
-    font-family: "Avenir Medium";
+    font-family: "Avenir";
+    line-height: 21px;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 32px;
     text-align: center;
     color: #58657D;
+    max-width: 230px;
 }
 .about-us-wr{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap-reverse;
 }
 .about-us-image{
@@ -211,13 +233,19 @@ button{
     box-sizing: border-box;
     padding-left: 40px;
 }
+.about-us-main p {
+    font-family: "Avenir";
+    color: var(--font);
+    line-height: 23px;
+}
 .about-us-heading{
-    font-family: "Avenir Medium";
+    font-family: "Avenir";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
     letter-spacing: -1px;
+    margin-bottom: 20px;
     color: var(--font);
 }
 .calculator{
@@ -226,16 +254,19 @@ button{
     background: #F8FCFE;
 }
 .calc-form{
-    font-family: "Avenir Medium";
+    font-family: "Avenir";
     width: 740px;
     padding: 40px;
     background: white;  
+    font-weight: 500;
+
 }
 .calc-item-heading{
     font-size: 24px;
     color: var(--orange);
 }
 .service-wr{
+    font-family: "Avenir";
     max-width: 632px;
     min-height: 304px;
     width: 100%;
@@ -311,6 +342,8 @@ left: -14px;
     display: inline-block;
 }
 .contact-form-heading{
+    font-family: "Avenir";
+    font-weight: 600;
     font-size: 24px;
     color: var(--font);
     margin-bottom: 16px;
@@ -356,6 +389,7 @@ left: -14px;
     justify-content: center;
 }
 .contact-card{
+    font-family: "Avenir";
     width: 308px;
     height: 156px;
     background:  #F6FBFE;
