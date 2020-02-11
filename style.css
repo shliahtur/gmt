@@ -23,14 +23,14 @@ font-style: normal;
     --font: #2B3D5C;
     --orange: #F27931;
   }
-body{
-    font-family: "Avenir" sans-serif;
+body, p{
+    font-family: "Avenir Medium";
 }
 a{
     color: var(--font);
 }
 h2{
-    font-family: Lora;
+    font-family: 'Avenir Medium';
     font-style: normal;
     font-weight: bold;
     font-size: 32px;
@@ -104,7 +104,7 @@ button{
     font-weight: bold;
 }
 .header-menu-item:focus-within::before{
-    content: "";
+    content: "Avenir Medium";
     display: block;
     position: absolute;
     bottom: 45px;
@@ -113,7 +113,7 @@ button{
     background: var(--gradient);
 }
 .header-title{
-    font-family: 'Lora', serif;
+    font-family: 'Avenir Medium', serif;
     font-size: 46px;
     font-weight: bold;
     color: var(--orange);
@@ -132,7 +132,7 @@ button{
 
 }
 .header-description{
-    font-family: "Avenir";
+    font-family: "Avenir Medium ";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -167,7 +167,7 @@ button{
 }
 .key-item-heading{
     margin: 30px 0;
-    font-family: "Avenir";
+    font-family: "Avenir Medium";
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
@@ -175,7 +175,7 @@ button{
     color: #2B3D5C;
 }
 .key-item-text{
-    font-family: "Avenir";
+    font-family: "Avenir Medium";
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -203,7 +203,7 @@ button{
     /* flex: 2 */
 }
 .about-us-heading{
-    font-family: "Avenir";
+    font-family: "Avenir Medium";
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
