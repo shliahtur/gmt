@@ -31,6 +31,8 @@ body{
 }
 a{
     color: var(--font);
+    margin: 13px 0;
+    display: block;
 }
 h2{
     font-family: 'Avenir Medium';
@@ -192,7 +194,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     flex-wrap: wrap-reverse;
 }
 .about-us-image{
@@ -350,14 +352,28 @@ left: -14px;
 .contact-form-input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
 .contact-form-input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
 .contact-form-input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
-
+.contacts-wr{
+    display: flex;
+}
 .contact-wr{
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
 }
 .contact-card{
     width: 308px;
     height: 156px;
     background:  #F6FBFE;
     margin: 10px;
+    text-align: center;
+    color: var(--font);
+    /* padding: 137px 0 0px 0; */
+}
+.contact-city{
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 47px;
 }
