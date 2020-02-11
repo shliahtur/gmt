@@ -41,8 +41,11 @@ body{
 }
 a{
     color: var(--font);
-    margin: 13px 0;
+    /* margin: 9px 0 -15px 0; */
     display: block;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 24px;
 }
 h2{
     font-family: 'Avenir';
@@ -216,11 +219,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-<<<<<<< HEAD
-    /* align-items: flex-start; */
-=======
     align-items: center;
->>>>>>> 5fa016f32c7a7a72c1ef30e78da7b0c0914aaf76
     flex-wrap: wrap-reverse;
 }
 .about-us-image{
@@ -389,8 +388,11 @@ left: -14px;
 .contact-form-input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
 .contact-form-input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
 .contact-form-input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
-.contacts-wr{
+.contacts-all-wr{
     display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: baseline;
+    align-items: flex-end;
 }
 .contact-wr{
     display: flex;
@@ -399,6 +401,12 @@ left: -14px;
     justify-content: center;
     flex-wrap: wrap;
     
+}
+.contact-cards-wr{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .contact-card{
     font-family: "Avenir";
@@ -413,5 +421,63 @@ left: -14px;
 .contact-city{
     font-size: 16px;
     line-height: 24px;
-    margin-top: 47px;
+    margin-top: 64px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+}
+.contact-phone{
+    color: var(--font);
+    margin: 9px 0 -15px 0;
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+.contact-name{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: block;
+    color: #58657D;
+}
+footer{
+    font-family: 'Avenir';
+    background: #041E30;
+}
+.footer-line{
+    background: #6D7C87;
+    height: 1px;
+    width: 100%;
+    margin: 20px 0;
+}
+.footer-logo{
+    filter: brightness(9);
+}
+.footer-nav{
+    display: inline-block;
+
+}
+.footer-nav-item{
+    float: right;
+    margin-right: 20px;
+}
+.footer-bottom{
+    height: 24px;
+}
+.footer-link{
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.footer-link:hover{
+    color: var(--orange);
+}
+.footer-rights{
+    float: right;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
 }
