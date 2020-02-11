@@ -108,7 +108,7 @@ button{
     font-weight: bold;
 }
 .header-menu-item:focus-within::before{
-    content: "Avenir Medium";
+    content: "";
     display: block;
     position: absolute;
     bottom: 45px;
@@ -262,8 +262,7 @@ button{
     list-style-type: disc; 
     padding: 0 28px;
     list-style-position: inside;
-    min-height: 48px;
-    height: 100%;
+    height: 48px;
     color: var(--orange);
     line-height: 48px;
     font-size: 28px;
