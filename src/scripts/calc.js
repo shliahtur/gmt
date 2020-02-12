@@ -1,4 +1,4 @@
-import {data} from '../data';
+import {data} from './data';
 
 const root = document.querySelector("#calc");
 const calc = document.createElement("div");
