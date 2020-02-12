@@ -21,6 +21,7 @@ a{
     font-weight: 800;
     font-size: 14px;
     line-height: 24px;
+    outline: none;
 }
 h2{
     font-family: 'Avenir';
@@ -80,8 +81,8 @@ button{
     font-size: 14px;
     /* position: absolute; */
     /* right: 40px; */
-    /* display: flex; */
-    /* align-items: center; */
+    display: flex;
+    align-items: center;
     float: right;
     font-weight: 500;
 
@@ -121,7 +122,6 @@ button{
 
 }
 .header-main{
-    margin-top: 84px;
     padding: 176px 0;
     width: 100%;
     background: rgba(43, 61, 92, 0.8) url("../assets/img/main-pic.jpg") no-repeat;
