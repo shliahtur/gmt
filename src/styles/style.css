@@ -72,8 +72,8 @@ button{
     background-size: 74px;
     /* position: absolute; */
     left: 80px;
-    top: 26px;
     display: inline-block;
+    vertical-align: middle;
 }
 .header-menu{
     /* height: 84px; */
@@ -436,6 +436,7 @@ footer{
 }
 .footer-logo{
     filter: brightness(9);
+
 }
 .footer-nav{
     display: inline-block;
@@ -444,6 +445,9 @@ footer{
 .footer-nav-item{
     float: right;
     margin-right: 20px;
+}
+.footer-nav-item:first-child{
+    margin-right: 0px;
 }
 .footer-bottom{
     height: 24px;
@@ -465,19 +469,19 @@ footer{
     color: #FFFFFF;
 }
 .footer-ul{
-    /* width: 150px; */
     display: inline-block;
 }
 .footer-li{
     width: 24px;
     height: 24px;
     float: right;
+    margin-left: 20px; 
+
 }
 .footer-icon{
     width: 24px;
     height: 24px;
-    margin-left: 20px;
-    /* float: right; */
+
 }
 .footer-icons{
     float: right;
@@ -489,14 +493,31 @@ footer{
     line-height: 24px;
     color: #FFFFFF;
     height: 24px;
-    display: inline-block;
+    vertical-align: top;
 }
 .inst{
-    background: url('img/inst.svg')
+    background: url('../assets/img/inst.svg')
 }
 .fb{
-    background: url('img/fb.svg')
+    background: url('../assets/img/inst.svg')
 }
 .clutch{
-    background: url('img/clutch.svg')
+    background: url('../assets/img/clutch.svg')
+}
+
+@media screen and (max-width: 715px){
+    .footer-rights{
+        float: none;
+        text-align: center;
+        margin-top: 9px;
+    }
+    .footer-bottom{
+        text-align: center;
+    }
+    .footer-link{
+        font-size: 12px;
+    }
+    .footer-title{
+        display: none;
+    }
 }
