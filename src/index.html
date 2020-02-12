@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GMT</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="js/jquery-3.3.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
 </head>
 
@@ -267,9 +263,19 @@
         <section class='calculator'>
             <div class='wr'>
                 <h2>Calculator</h2>
-                <div id="calc"></div>
                 <div class="calc-form">
                     <h3 class='calc-item-heading'>1.Choose team composition</h3>
+                        <div id="calc"></div>
+                    <h3 class='calc-item-heading'>2. Do you dedicated room/office?</h3>
+                    <div class="check-container">
+                        <input type="checkbox" id="isRoomTrue" name="isRoomTrue"/>
+                        <label for="isRoomTrue">Yes</label>
+                    </div>
+                    <div class="check-container">
+                            <input type="checkbox" id="isRoomFalse" name="isRoomFalse"/>
+                            <label for="isRoomFalse">No</label>
+                        </div>
+                    <h3 class='calc-item-heading'>3. Do you need offce room/office branding?</h3>
                 </div>
             </div>
         </section>
@@ -391,16 +397,7 @@
                 </div>
             </div>
         </footer>
-
-
     </div>
-    <script src="src/index.js"></script>
-    <script src="slick/slick.min.js"></script>
-    <script src="src/slider.js"></script>
-    <script type="module" src="data.js"></script>    
-    <script type="module" src="js/calc.js"></script>    
-
-    <script src="js/anchor.js"></script>
 </body>
 
 </html>

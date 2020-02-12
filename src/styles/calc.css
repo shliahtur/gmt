@@ -1,0 +1,72 @@
+.calculator{
+    padding: 40px;
+    height: 800px;
+    background: #F8FCFE;
+}
+.calc-form{
+    font-family: "Avenir";
+    width: 740px;
+    padding: 40px;
+    background: white;  
+    font-weight: 500;
+
+}
+.calc-item-heading{
+    font-size: 24px;
+    color: var(--orange);
+    margin-bottom: 30px;
+}
+
+.position-item-container{
+    display: flex;
+    align-items: center;
+    width: 230px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.position-item-text{
+    font-family: "Avenir";
+    margin-right: 10px;
+    color: var(--font);
+    font-weight: 600;
+}
+.counter-btn-container{
+    display: flex;
+    align-items: center;
+}
+.counter-input{
+    font-family: "Avenir";
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--font);
+    width: 40px;
+    height: 32px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+    outline: none;
+    text-align: center;
+    pointer-events: none;
+    margin: 0 10px
+}
+.counter-btn{
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background: var(--border);
+}
+.counter-btn:hover{
+    background: rgb(165, 165, 165);
+}
+.counter-minus-btn::after{
+    content: "-";
+    font-size: 29px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.counter-plus-btn::after{
+    content: "+";
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 22px;
+}
