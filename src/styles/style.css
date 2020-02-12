@@ -32,7 +32,7 @@ h2{
     text-align: center;
     color: var(--font);  
     margin-bottom: 40px;
-    font-weight: 500;
+    font-weight: 800;
 }
 button{
     font-family: "Avenir";
@@ -64,6 +64,9 @@ button{
     /* position: relative; */
     width: 100%;
     height: 100%;
+}
+.header-line{
+    margin-top: -39px;
 }
 .header-logo{
     background: url('../assets/img/logo.svg') no-repeat;
@@ -129,6 +132,7 @@ button{
     background-size: cover;
     background-position: center;
     max-height: 576px;
+    margin-top: -44px;
 
 }
 .header-description{
@@ -194,29 +198,25 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: self-start;
     flex-wrap: wrap-reverse;
 }
 .about-us-image{
     /* display: inline-block; */
     background: url('../assets/img/about-us-pic.jpg') no-repeat;
     background-size:  cover;
-    min-width: 400px;
+    /* min-width: 400px; */
     height: 100%;
     width: 50%;
     min-height: 316px;
     border-radius: 8px;
+    margin-top: 5px;
 }
 .about-us-main{
     width: 50%;
     min-width: 300px;
     box-sizing: border-box;
     padding-left: 40px;
-}
-.about-us-main p {
-    font-family: "Avenir";
-    color: var(--font);
-    line-height: 23px;
 }
 .about-us-heading{
     font-family: "Avenir";
@@ -227,6 +227,13 @@ button{
     letter-spacing: -1px;
     margin-bottom: 20px;
     color: var(--font);
+}
+.about-us-text{
+    max-width: 495px;
+    font-family: "Avenir";
+    color: var(--font);
+    line-height: 27px;
+
 }
 .calculator{
     padding: 40px;
@@ -400,7 +407,7 @@ left: -14px;
 .contact-city{
     font-size: 16px;
     line-height: 24px;
-    margin-top: 64px;
+    margin-top: 44px;
     font-weight: 800;
     font-size: 16px;
     line-height: 24px;
@@ -506,6 +513,7 @@ footer{
 }
 
 @media screen and (max-width: 715px){
+
     .footer-rights{
         float: none;
         text-align: center;
@@ -519,5 +527,18 @@ footer{
     }
     .footer-title{
         display: none;
+    }
+}
+@media screen and (max-width: 940px){
+    .about-us-main{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px
+    }
+    .about-us-image{
+        width: 100%;
+    }
+    .about-us-text{
+        max-width: 100%;
     }
 }
