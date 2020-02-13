@@ -25,11 +25,3 @@ import renderSlider from './scripts/slider';
 //         panel[0].classList.add("active");
 //     });
 // }
-
-    const tableItems = document.querySelectorAll(".table-item");
-
-    for (const el of tableItems) {
-        if (!el.childNodes[0].innerHTML.length) {
-            el.style.cssText = "list-style: none";
-        }
-    }
