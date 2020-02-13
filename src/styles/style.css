@@ -63,6 +63,8 @@ button{
     padding: 60px;
     margin: auto;
 }
+
+/*HEADER*/
 .header{
     /* position: relative; */
     width: 100%;
@@ -154,6 +156,10 @@ button{
     margin: 0 auto;
     display: flex;
 }
+/*HEADER*/
+
+
+/*ABOUT US*/
 .about-us{
     padding: 120px 0;
 }
@@ -237,7 +243,7 @@ button{
     color: var(--font);
     line-height: 27px;
 }
-
+/*ABOUT US*/
 .calc-form{
     font-family: "Avenir";
     width: 740px;
@@ -245,6 +251,9 @@ button{
     background: white;  
     font-weight: 500;
 }
+
+
+/*SERVICE FEE*/
 .service-wr{
     font-family: "Avenir";
     max-width: 632px;
@@ -285,21 +294,11 @@ button{
     border-bottom: 1px solid #E6E8EA;
 }
 .table-text{
-
-font-size: 14px;
-
-color: var(--font);
-
-/* margin-top: 23px; */
-
-position: relative;
-
-top: -3px;
-
-left: -14px;
-}
-.tab{
-    cursor: pointer;
+    font-size: 14px;
+    color: var(--font);
+    position: relative;
+    top: -3px;
+    left: -14px;
 }
 .table-right>li{
     border-left:none;
@@ -312,19 +311,54 @@ left: -14px;
 .table-right>li:nth-child(n+4){
     list-style: none;
 }
-.table-tab-wr{
+.tabs-container{
     display: none;
 }
-.table-tab-right>li:nth-child(n+4){
-    list-style: none;
+.tabs-panel {
+  display: none;
 }
-.table-tab{
+.tabs{
     width: 100%;
 }
+.tabs-content{
+    clear: both;
+}
+.tabs-panel.active {
+  display: block;
+}
+.tabs{
+    height: 60px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.tabs li{
+    border-radius: 2px;
+    display: inline-block;
+    margin-right: 10px;
+    width: 100%;
+}
+.tabs li:last-child{
+    margin-right:0px
+}
+.tabs li> .table-heading{
+    background: #F6FCFF;
+    color:  #041E30;
+    border-radius: 3px;
+}
+.tabs > li.active > .table-heading{
+    background:  #041E30;
+    color: white;
+}
+/*SERVICE FEE*/
+
+/*OFFICE*/ 
 .office{
     background: rgba(79, 170, 233, 0.04);
     height: 700px;
 }
+/*OFFICE*/ 
 .reviews{
     height: 600px;
 }
@@ -612,7 +646,7 @@ footer{
      .table{
          display: none;
      }
-     .table-tab-wr{
+     .tabs-container{
          display: block;
      }
  }
