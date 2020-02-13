@@ -49,7 +49,7 @@ button{
     cursor: pointer;
     background: var(--gradient);
     font-weight: 500;
-
+    text-align: center;
 }
 .container{
     width: 100%;
@@ -74,8 +74,8 @@ button{
     background-size: 74px;
     /* position: absolute; */
     left: 80px;
-    top: 26px;
     display: inline-block;
+    vertical-align: middle;
 }
 .header-menu{
     /* height: 84px; */
@@ -338,7 +338,11 @@ left: -14px;
 .contact-form-button{
     display: flex;
     margin: 0 auto;
+    width: 200px;
+    height: 48px;
     margin-top: -20px;
+    /* text-align: center; */
+    justify-content: center;
 }
 /* плавное изменение прозрачности  placeholder-а при фокусе */
 .contact-form-input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
@@ -402,6 +406,10 @@ left: -14px;
     display: block;
     color: #58657D;
 }
+.contact-us-button{
+    width: 200px;
+    height: 48px;
+}
 footer{
     font-family: 'Avenir';
     background: #041E30;
@@ -414,6 +422,7 @@ footer{
 }
 .footer-logo{
     filter: brightness(9);
+
 }
 .footer-nav{
     display: inline-block;
@@ -422,6 +431,9 @@ footer{
 .footer-nav-item{
     float: right;
     margin-right: 20px;
+}
+.footer-nav-item:first-child{
+    margin-right: 0px;
 }
 .footer-bottom{
     height: 24px;
@@ -441,4 +453,57 @@ footer{
     font-size: 14px;
     line-height: 24px;
     color: #FFFFFF;
+}
+.footer-ul{
+    display: inline-block;
+}
+.footer-li{
+    width: 24px;
+    height: 24px;
+    float: right;
+    margin-left: 20px; 
+
+}
+.footer-icon{
+    width: 24px;
+    height: 24px;
+
+}
+.footer-icons{
+    float: right;
+    height:  24px;
+}
+.footer-title{
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    height: 24px;
+    vertical-align: top;
+}
+.inst{
+    background: url('../assets/img/inst.svg')
+}
+.fb{
+    background: url('../assets/img/inst.svg')
+}
+.clutch{
+    background: url('../assets/img/clutch.svg')
+}
+
+@media screen and (max-width: 715px){
+    .footer-rights{
+        float: none;
+        text-align: center;
+        margin-top: 9px;
+    }
+    .footer-bottom{
+        text-align: center;
+    }
+    .footer-link{
+        font-size: 12px;
+    }
+    .footer-title{
+        display: none;
+    }
 }
