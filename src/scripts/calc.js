@@ -1,53 +1,72 @@
-import { data } from "./data";
+// import { data } from "./data";
 
-const root = document.querySelector("#calc");
+// const root = document.querySelector("#calc");
 
-const renderCounter = () => {
-  const counterBtnContainer = document.createElement("div");
-  counterBtnContainer.className = "counter-btn-container";
+// class Calc {
+//   constructor() {
+    
+//   }
 
-  const minusBtn = document.createElement("button");
-  minusBtn.classList += "counter-btn counter-minus-btn";
+//  addPosition = (e) => {
+//   const parent = e.target.parentNode;
+//   const input = parent.querySelector('input');
+//   input.value = +input.value + 1
+// }
+//  removePosition = (e) => {
+//   const parent = e.target.parentNode;
+//   const input = parent.querySelector('input');
+//   if(+input.value > 0){
+//     input.value = +input.value - 1
+//   }
+// }
+//  renderCounter = () => {
+//   const counterBtnContainer = document.createElement("div");
+//   counterBtnContainer.className = "counter-btn-container";
 
-  const plusBtn = document.createElement("button");
-  plusBtn.classList += "counter-btn counter-plus-btn";
+//   const minusBtn = document.createElement("button");
+//   minusBtn.classList += "counter-btn counter-minus-btn";
+//   minusBtn.addEventListener('click', (e) => removePosition(e))
 
-  const input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.className = "counter-input";
+//   const plusBtn = document.createElement("button");
+//   plusBtn.classList += "counter-btn counter-plus-btn";
+//   plusBtn.addEventListener('click', (e) => addPosition(e))
 
-  counterBtnContainer.append(minusBtn, input, plusBtn);
+//   const input = document.createElement("input");
+//   input.setAttribute("type", "text");
+//   input.value = 0
+//   input.className = "counter-input";
 
-  return counterBtnContainer;
-};
+//   counterBtnContainer.append(minusBtn, input, plusBtn);
 
-const renderPosition = name => {
-  const positionContainer = document.createElement("div");
-  positionContainer.className = "position-item-container";
+//   return counterBtnContainer;
+// };
 
-  const positionText = document.createElement("div");
-  positionText.className = "position-item-text";
-  positionText.innerText = name;
+//  renderPosition = name => {
+//   const positionContainer = document.createElement("div");
+//   positionContainer.className = "position-item-container";
 
-  const positionBtns = renderCounter();
+//   const positionText = document.createElement("div");
+//   positionText.className = "position-item-text";
+//   positionText.innerText = name;
 
-  positionContainer.append(positionText, positionBtns);
+//   const positionBtns = renderCounter();
 
-  return positionContainer;
-};
+//   positionContainer.append(positionText, positionBtns);
 
-const renderPositions = () => {
-  const positions = document.createElement("div");
-  Object.keys(data).forEach(x => {
-    const position = renderPosition(x);
-    positions.appendChild(position);
-  });
-  return positions;
-};
+//   return positionContainer;
+// };
+//  renderPositions = () => {
+//   const positions = document.createElement("div");
+//   Object.keys(data).forEach(x => {
+//     const position = renderPosition(x);
+//     positions.appendChild(position);
+//   });
+//   return positions;
+// };
 
-const renderCalc = () => {
-  const positions = renderPositions();
-  root.appendChild(positions);
-};
-
-export default renderCalc;
+//  renderCalc = () => {
+//   const positions = renderPositions();
+//   root.appendChild(positions);
+// };
+// }
+// export default Calc;
