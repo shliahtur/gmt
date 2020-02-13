@@ -1,10 +1,10 @@
 import './styles/style.css';
-import renderCalc from './scripts/calc';
+import Calc from './scripts/calc';
 import renderSlider from './scripts/slider';
 
 
-
-renderCalc();
+Calc = new Calc();
+Calc.renderCalc();
 renderSlider();
 
 // $(".table-tab-wr").on("click", ".tab", function() {
