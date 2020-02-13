@@ -230,8 +230,6 @@ button{
     margin-bottom: 20px;
     color: var(--font);
 }
-<<<<<<< HEAD
-=======
 .about-us-text{
     max-width: 495px;
     font-family: "Avenir";
@@ -250,8 +248,7 @@ button{
     padding: 40px;
     background: white;  
     font-weight: 500;
->>>>>>> 9f9d15e7faa43e721671170c3ec91d3526a42ad8
-
+}
 .service-wr{
     font-family: "Avenir";
     max-width: 632px;
