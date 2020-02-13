@@ -1,17 +1,11 @@
 import './styles/style.css';
 import renderCalc from './scripts/calc';
-import Glide from '@glidejs/glide'
-import "../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
-import "../node_modules/@glidejs/glide/dist/css/glide.theme.min.css";
+import renderSlider from './scripts/slider';
+
+
 
 renderCalc();
-
-const glideConfig = { 
-autoplay: true,
-time: 10000
-}
-
-new Glide('.glide', glideConfig).mount()
+renderSlider();
 
 // $(".table-tab-wr").on("click", ".tab", function() {
 //     // Удаляем классы active

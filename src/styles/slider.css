@@ -1,0 +1,9 @@
+.glide__bullet{
+    background: var(--border) !important;
+}
+.glide__bullet--active{
+    background: var(--gradient) !important;
+}
+.glide__bullets{
+    top: 60px;
+}
