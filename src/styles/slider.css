@@ -5,5 +5,14 @@
     background: var(--gradient) !important;
 }
 .glide__bullets{
-    top: 60px;
+    position: initial !important;
+    margin-top: 30px;
+    cursor: default;
+}
+.glide__bullet{
+    border: none !important;
+    box-shadow: none !important;
+}
+.glide{
+    text-align: center;
 }
