@@ -309,9 +309,6 @@ button{
     float: right;
 
 }
-.table-right>li:nth-child(n+4){
-    list-style: none;
-}
 .tabs-container{
     display: none;
 }

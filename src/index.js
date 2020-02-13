@@ -25,3 +25,14 @@ for (let el of tabLinks) {
         panel[0].classList.add("active");
     });
 }
+
+var tableTexts = document.getElementsByClassName('table-text');
+
+for (let i = 0; i < tableTexts.length; i++) {
+    if (tableTexts[i].parentElement.className === 'table-item' && tableTexts[i].innerHTML === '') {
+        tableTexts[i].parentElement.style.listStyle = 'none'
+    }
+    else{
+
+    }
+}
