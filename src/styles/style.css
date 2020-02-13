@@ -34,7 +34,7 @@ h2{
     text-align: center;
     color: var(--font);  
     margin-bottom: 40px;
-    font-weight: 500;
+    font-weight: 800;
 }
 button{
     font-family: "Avenir";
@@ -66,6 +66,9 @@ button{
     /* position: relative; */
     width: 100%;
     height: 100%;
+}
+.header-line{
+    margin-top: -39px;
 }
 .header-logo{
     background: url('../assets/img/logo.svg') no-repeat;
@@ -131,6 +134,7 @@ button{
     background-size: cover;
     background-position: center;
     max-height: 576px;
+    margin-top: -44px;
 
 }
 .header-description{
@@ -196,29 +200,25 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: self-start;
     flex-wrap: wrap-reverse;
 }
 .about-us-image{
     /* display: inline-block; */
     background: url('../assets/img/about-us-pic.jpg') no-repeat;
     background-size:  cover;
-    min-width: 400px;
+    /* min-width: 400px; */
     height: 100%;
     width: 50%;
     min-height: 316px;
     border-radius: 8px;
+    margin-top: 5px;
 }
 .about-us-main{
     width: 50%;
     min-width: 300px;
     box-sizing: border-box;
     padding-left: 40px;
-}
-.about-us-main p {
-    font-family: "Avenir";
-    color: var(--font);
-    line-height: 23px;
 }
 .about-us-heading{
     font-family: "Avenir";
@@ -230,6 +230,27 @@ button{
     margin-bottom: 20px;
     color: var(--font);
 }
+<<<<<<< HEAD
+=======
+.about-us-text{
+    max-width: 495px;
+    font-family: "Avenir";
+    color: var(--font);
+    line-height: 27px;
+
+}
+.calculator{
+    padding: 40px;
+    height: 800px;
+    background: #F8FCFE;
+}
+.calc-form{
+    font-family: "Avenir";
+    width: 740px;
+    padding: 40px;
+    background: white;  
+    font-weight: 500;
+>>>>>>> 9f9d15e7faa43e721671170c3ec91d3526a42ad8
 
 .service-wr{
     font-family: "Avenir";
@@ -284,6 +305,9 @@ top: -3px;
 
 left: -14px;
 }
+.tab{
+    cursor: pointer;
+}
 .table-right>li{
     border-left:none;
 
@@ -294,6 +318,15 @@ left: -14px;
 }
 .table-right>li:nth-child(n+4){
     list-style: none;
+}
+.table-tab-wr{
+    display: none;
+}
+.table-tab-right>li:nth-child(n+4){
+    list-style: none;
+}
+.table-tab{
+    width: 100%;
 }
 .office{
     background: rgba(79, 170, 233, 0.04);
@@ -386,7 +419,7 @@ left: -14px;
 .contact-city{
     font-size: 16px;
     line-height: 24px;
-    margin-top: 64px;
+    margin-top: 44px;
     font-weight: 800;
     font-size: 16px;
     line-height: 24px;
@@ -485,13 +518,23 @@ footer{
     background: url('../assets/img/inst.svg')
 }
 .fb{
-    background: url('../assets/img/inst.svg')
+    background: url('../assets/img/fb.svg')
 }
 .clutch{
     background: url('../assets/img/clutch.svg')
 }
+.glide__slide{
+    background: forestgreen;
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+.glide__bullets{
+    top: 60px;
+}
 
 @media screen and (max-width: 715px){
+
     .footer-rights{
         float: none;
         text-align: center;
@@ -507,3 +550,24 @@ footer{
         display: none;
     }
 }
+@media screen and (max-width: 940px){
+    .about-us-main{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px
+    }
+    .about-us-image{
+        width: 100%;
+    }
+    .about-us-text{
+        max-width: 100%;
+    }
+}
+ @media screen and (max-width: 690px){
+     .table{
+         display: none;
+     }
+     .table-tab-wr{
+         display: block;
+     }
+ }
