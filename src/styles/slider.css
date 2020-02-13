@@ -16,3 +16,15 @@
 .glide{
     text-align: center;
 }
+.glide__arrow{
+    height: 30px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    box-shadow: none !important;
+}
+.glide__arrow--left{
+    background-image: url('../assets/img/arrow-left.svg')
+}
+.glide__arrow--right{
+    background-image: url('../assets/img/arrow-right.svg')
+}

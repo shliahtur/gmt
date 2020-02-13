@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +33,7 @@
                         <button id="header-button">Contact us</button>
                     </nav>
                 </div>
-                
+
             </div>
             <div class="header-main">
                 <div class='wr'>
@@ -248,7 +249,8 @@
                                 Set-up an entire development center, inconvenience-free, in Ukraine. We take care of
                                 everything.
                             </div>
-                            <p class='about-us-text'>You enjoy full transparency, from your employees salaries to the electricity bill. The
+                            <p class='about-us-text'>You enjoy full transparency, from your employees salaries to the
+                                electricity bill. The
                                 Crunch team manages the entire process, down to the smallest details.</br></br>
                                 The process is entirely transparent. Your new office. Your vision. Your new employees
                                 are aligned to your company goals. They are managed in full compliance with your needs
@@ -267,16 +269,16 @@
                 <h2>Calculator</h2>
                 <div class="calc-form">
                     <h3 class='calc-item-heading'>1.Choose team composition</h3>
-                        <div id="calc"></div>
+                    <div id="calc"></div>
                     <h3 class='calc-item-heading'>2. Do you dedicated room/office?</h3>
                     <div class="check-container">
-                        <input type="checkbox" id="isRoomTrue" name="isRoomTrue"/>
+                        <input type="checkbox" id="isRoomTrue" name="isRoomTrue" />
                         <label for="isRoomTrue">Yes</label>
                     </div>
                     <div class="check-container">
-                            <input type="checkbox" id="isRoomFalse" name="isRoomFalse"/>
-                            <label for="isRoomFalse">No</label>
-                        </div>
+                        <input type="checkbox" id="isRoomFalse" name="isRoomFalse" />
+                        <label for="isRoomFalse">No</label>
+                    </div>
                     <h3 class='calc-item-heading'>3. Do you need offce room/office branding?</h3>
                 </div>
             </div>
@@ -313,7 +315,7 @@
                             <li class='table-item'><span class="table-text">Managed Workstation</span></li>
                         </div>
                         <div class="table-tab-right">
-                            <li class='table-item'><span class="table-text">HR support</span></li>                           
+                            <li class='table-item'><span class="table-text">HR support</span></li>
                             <li class='table-item'><span class="table-text">3% - starting from 7 FTE</span></li>
                             <li class='table-item'><span class="table-text">7% - starting from 10 FTE</span></li>
                             <li class='table-item'><span class="table-text"></span></li>
@@ -327,36 +329,76 @@
         <section class='office'>
             <div class='wr'>
                 <h2>Welcome to our office</h2>
-                <div class="glide">
+                <div class="glide office-slider">
                     <div class="glide__track" data-glide-el="track">
-                      <ul class="glide__slides">
-                        <li class="glide__slide">
-                            <div class="office-pic office-pic-1"></div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="office-pic office-pic-2"></div>
-                        </li>
-                        <li class="glide__slide">
-                            <div class="office-pic office-pic-3"></div>
-                        </li>
-                      </ul>
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <div class="office-pic office-pic-1"></div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="office-pic office-pic-2"></div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="office-pic office-pic-3"></div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="glide__bullets" data-glide-el="controls[nav]">
                         <button class="glide__bullet" data-glide-dir="=0"></button>
                         <button class="glide__bullet" data-glide-dir="=1"></button>
                         <button class="glide__bullet" data-glide-dir="=2"></button>
-                      </div>
-                  </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class='reviews'>
             <div class='wr'>
                 <h2>Testimonials</h2>
-                <div class="testimonials_slider">
-
-
-                    <!-- Слайды в отдельных дивах  -->
-
+                <div class="glide testemonials-slider">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <div class="test-container">
+                                    <div class="test-icon test-icon-1"></div>
+                                    <div class="test-name">Declan</div>
+                                    <div class="test-position">CTO at Timegen</div>
+                                    <div class="test-desc">Yes, it’s been really good. He’s currently developing the app
+                                        with the mockups we sent through (still waiting on the finalised designs) and
+                                        seems to be making really good progress.
+                                        He’s also very quick to respond to any queris we have. So it’s been good so far!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="test-container">
+                                    <div class="test-icon test-icon-2"></div>
+                                    <div class="test-name">Matt</div>
+                                    <div class="test-position">CEO at USA Software Company</div>
+                                    <div class="test-desc">He’s doing fantastic and I don’t want to change a thing!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="test-container">
+                                    <div class="test-icon test-icon-3"></div>
+                                    <div class="test-name">Peter</div>
+                                    <div class="test-position">Product manager at Denmark Software Company</div>
+                                    <div class="test-desc">Michael, Thanks for asking. We are very happy with a current
+                                        set up 🙂
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+                    </div>
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        <button class="glide__bullet" data-glide-dir="=0"></button>
+                        <button class="glide__bullet" data-glide-dir="=1"></button>
+                        <button class="glide__bullet" data-glide-dir="=2"></button>
+                    </div>
                 </div>
             </div>
         </section>
