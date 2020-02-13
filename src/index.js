@@ -26,7 +26,6 @@ import renderSlider from './scripts/slider';
 //     });
 // }
 
-<<<<<<< HEAD
         const panel = [...tabPanels].filter(el => el.getAttribute("data-index") == index);
         panel[0].classList.add("active");
     });
@@ -38,16 +37,4 @@ for (let i = 0; i < tableTexts.length; i++) {
     if (tableTexts[i].parentElement.className === 'table-item' && tableTexts[i].innerHTML === '') {
         tableTexts[i].parentElement.style.listStyle = 'none'
     }
-    else{
-
-    }
 }
-=======
-    const tableItems = document.querySelectorAll(".table-item");
-
-    for (const el of tableItems) {
-        if (!el.childNodes[0].innerHTML.length) {
-            el.style.cssText = "list-style: none";
-        }
-    }
->>>>>>> 81be85a2907c1ae482428cbb7e13f67e6d3d1f28
