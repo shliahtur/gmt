@@ -8,7 +8,7 @@ renderCalc();
 
 const glideConfig = { 
 autoplay: true,
-duration: 3000
+time: 10000
 }
 
 new Glide('.glide', glideConfig).mount()
