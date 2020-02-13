@@ -3,9 +3,11 @@
     margin: 25px 20px 25px 0;
   }
   
-  input[type="checkbox"] { display: none; }
+  input[type="radio"] { 
+    display: none; 
+  }
   
-  input[type="checkbox"] + label {
+  input[type="radio"] + label {
     display: block;
     position: relative;
     cursor: pointer;
@@ -14,9 +16,9 @@
     -ms-user-select: none;
   }
   
-  input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+  input[type="radio"] + label:last-child { margin-bottom: 0; }
   
-  input[type="checkbox"] + label:before {
+  input[type="radio"] + label:before {
     content: '';
     display: block;
     width: 20px;
@@ -30,7 +32,7 @@
     transition: all .12s, border-color .08s;
   }
   
-  input[type="checkbox"]:checked + label:before {
+  input[type="radio"]:checked + label:before {
       width: 7px;
       height: 18px;
       top: -9px;

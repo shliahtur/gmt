@@ -271,15 +271,27 @@
                     <h3 class='calc-item-heading'>1.Choose team composition</h3>
                     <div id="calc"></div>
                     <h3 class='calc-item-heading'>2. Do you dedicated room/office?</h3>
-                    <div class="check-container">
-                        <input type="checkbox" id="isRoomTrue" name="isRoomTrue" />
-                        <label for="isRoomTrue">Yes</label>
-                    </div>
-                    <div class="check-container">
-                        <input type="checkbox" id="isRoomFalse" name="isRoomFalse" />
-                        <label for="isRoomFalse">No</label>
+                    <div class="checks-container">
+                            <div class="check-container">
+                                    <input type="radio" value='true' id="isRoomTrue" name="isRoom" />
+                                    <label for="isRoomTrue">Yes</label>
+                                </div>
+                                <div class="check-container">
+                                    <input type="radio" value='false' id="isRoomFalse" name="isRoom" />
+                                    <label for="isRoomFalse">No</label>
+                                </div>
                     </div>
                     <h3 class='calc-item-heading'>3. Do you need offce room/office branding?</h3>
+                    <div class="checks-container">
+                            <div class="check-container">
+                                    <input type="radio" value='true' id="isBrandingTrue" name="isBranding" />
+                                    <label for="isBrandingTrue">Yes</label>
+                                </div>
+                                <div class="check-container">
+                                    <input type="radio" value='false' id="isBrandingFalse" name="isBranding" />
+                                    <label for="isBrandingFalse">No</label>
+                                </div>
+                    </div>
                 </div>
             </div>
         </section>
