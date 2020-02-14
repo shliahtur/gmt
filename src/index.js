@@ -34,3 +34,11 @@ for (let i = 0; i < tableTexts.length; i++) {
         tableTexts[i].parentElement.style.listStyle = 'none'
     }
 }
+
+
+let menuButton = document.getElementById('burger-icon')
+menuButton.style.cursor = 'pointer';
+menuButton.onclick = function () {
+    document.getElementById('modal-menu').style.display = 'block';
+    menuButton.classList.add('close-button')
+}

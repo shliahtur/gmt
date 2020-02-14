@@ -95,6 +95,41 @@ button{
     font-weight: 500;
 
 }
+#modal-menu{
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    background: white;
+    position: relative;
+    display: none;
+
+}
+.modal-menu-item{
+    text-align: center;
+}
+.modal-menu-items{
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+.modal-menu-item{
+    margin-top: 30px;
+}
+.modal-header-button{
+    margin-top: 20px;
+    width: 188px;
+    height: 40px;
+}
+.modal-menu-items a{
+    font-family: 'Avenir';
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+    color: #2B3D5C;
+}
+#burger-icon{
+    display: none;
+}
 .header-menu-items{
     width: 340px;
     margin-right: 40px;
@@ -132,8 +167,7 @@ button{
 .header-main{
     padding: 176px 0;
     width: 100%;
-    background: rgba(43, 61, 92, 0.8) url("../assets/img/main-pic.jpg") no-repeat;
-    background-blend-mode: overlay;
+    background:url("../assets/img/main-pic.jpg") no-repeat;
     background-size: cover;
     background-position: center;
     max-height: 576px;
@@ -155,6 +189,7 @@ button{
 #calc-button{
     margin: 0 auto;
     display: flex;
+    height: 40px;
 }
 /*HEADER*/
 
@@ -180,8 +215,23 @@ button{
     align-items: center;
 
 }
+.key-item-icon{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto;
+    background-size: 100%;
+}
+.icon-team{
+    background: url('../assets/img/icon1.svg') no-repeat;
+}
+.icon-pay{
+    background: url('../assets/img/icon3.svg') no-repeat;
+}
+.icon-brand{
+    background: url('../assets/img/icon2.svg') no-repeat;
+}
 .key-item-heading{
-    margin-top: 30px;
+    margin-top: 24px;
     margin-bottom: 10px;
     font-family: "Avenir";
     font-style: normal;
@@ -360,7 +410,7 @@ button{
     height: 600px;
 }
 .contact-form{
-    width: 50%;
+    flex: 1 1 auto;
     min-width: 400px;
     display: inline-block;
 }
@@ -369,7 +419,7 @@ button{
     font-weight: 600;
     font-size: 24px;
     color: var(--font);
-    margin-bottom: 16px;
+    /* margin-bottom: 26px; */
 }
 .contact-form-input{
     width: 100%;
@@ -378,7 +428,7 @@ button{
     border: 1px solid #E6E8EA;
     box-sizing: border-box;
     border-radius: 2px;
-    margin-bottom: 32px;
+    margin-top: 32px;
     padding: 15px;
 }
 .contact-form-input-longer{
@@ -397,7 +447,7 @@ button{
     margin: 0 auto;
     width: 200px;
     height: 48px;
-    margin-top: -20px;
+    margin-top: 16px;
     /* text-align: center; */
     justify-content: center;
 }
@@ -422,6 +472,7 @@ button{
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    flex: 1 1 50%;
     
 }
 .contact-cards-wr{
@@ -429,13 +480,14 @@ button{
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+
 }
 .contact-card{
     font-family: "Avenir";
     width: 308px;
     height: 156px;
     background:  #F6FBFE;
-    margin: 10px;
+    margin: 5px;
     text-align: center;
     color: var(--font);
     /* padding: 137px 0 0px 0; */
@@ -466,6 +518,7 @@ button{
 .contact-us-button{
     width: 200px;
     height: 48px;
+    margin-top: 16px;
 }
 footer{
     font-family: 'Avenir';
@@ -646,4 +699,50 @@ footer{
      .tabs-container{
          display: block;
      }
+     .contact-icon{
+         display: block;
+         width: 32px;
+         height: 32px;
+         background: url('../assets/img/phone.svg') no-repeat;
+         margin: 27px auto;
+     }
+     .contact-city{
+         margin-top:-23px;
+     }
+ }
+ @media screen and (max-width: 1410px){
+    .contact-form{
+        flex: 1 2 auto;
+    }
+    .contact-wr{
+        flex: 1 1 auto;
+    }
+ }
+ @media screen and (max-width: 1200px){
+     .contacts-all-wr{
+         flex-wrap: wrap;
+     }
+     .contact-wr{
+         margin-top: 60px;
+         width: 70%;
+     }
+ }
+ @media screen and (max-width: 760px){
+     .header-menu{
+         display: none;
+     }
+     #burger-icon{
+         display: block;
+         width: 24px;
+         height: 25px;
+         background: url('../assets/img/burger.svg') no-repeat;
+         float: right;
+         background-position: center;
+         cursor: pointer;
+
+     }
+ }
+  #burger-icon.close-button{
+     background: url('../assets/img/close_icon.svg') no-repeat;
+
  }
