@@ -70,3 +70,18 @@
     font-weight: bold;
     line-height: 22px;
 }
+.calc-label{
+    font-family: "Avenir";
+    font-size: 12px;
+    color: var(--font);
+    margin-bottom: 20px;
+}
+.position-bar{
+    width: 300px;
+    height: 100px;
+    background: green;
+}
+.bar-container{ 
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 30px;
+}

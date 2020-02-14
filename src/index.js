@@ -1,11 +1,10 @@
 import './styles/style.css';
-import Calc from './scripts/calc';
 import renderSlider from './scripts/slider';
+import renderCalc from './scripts/calc';
 
 
-// Calc = new Calc();
-// Calc.renderCalc();
-// renderSlider();
+renderCalc();
+renderSlider();
 
 const tabLinks = document.querySelectorAll(".tabs a");
 const tabPanels = document.querySelectorAll(".tabs-panel");
