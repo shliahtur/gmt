@@ -1,7 +1,9 @@
 {
   "name": "gmt",
+  "homepage": "https://testcab.csd.ua/registers",
   "version": "1.0.0",
   "description": "",
+  
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
