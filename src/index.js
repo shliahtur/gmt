@@ -35,7 +35,6 @@ for (let i = 0; i < tableTexts.length; i++) {
     }
 }
 
-
 let menuButton = document.getElementById('burger-icon')
 menuButton.style.cursor = 'pointer';
 menuButton.onclick = function () {

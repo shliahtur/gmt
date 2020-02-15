@@ -4,8 +4,8 @@ const root = document.querySelector("#calc");
 const reportRoot = document.querySelector(".report-table");
 
 var state = {
-  selected: []
 };
+var report = [];
 
 const addPosition = e => {
   const parent = e.target.parentNode;
@@ -37,16 +37,14 @@ const removePosition = e => {
   renderBarItem();
 };
 
-const renderReportItem = () => {
 
-}
-addItemToState = (item) => {
-  state.selected.push({
-      name: item.name,
+const addItemToReport = (item) => {
+  report[item.name] = {
       count: item.count,
       level: item.level,
       price: item.price
-  })
+  }
+  console.log(report)
 }
 const renderBarItem = () => {
   const container = document.querySelector(".bar-container");
@@ -57,6 +55,13 @@ const renderBarItem = () => {
     const levels = state[el].positions.map(x => x.level[0])[0];
     const position = renderPosition(el, count, specs, levels);
     container.append(position);
+    const report = {
+      name: specs[0],
+      count,
+      level: Object.keys(levels)[0],
+      price: levels[Object.keys(levels)[0]]
+    }
+    addItemToReport(report)
   }
 };
 
@@ -79,35 +84,43 @@ const renderLevelsSelect = data => {
   return levels;
 };
 
-
-const renderPosition = (name, count, specs, levels) => {
+const renderPosition = (name) => {
   const positionContainer = document.createElement("div");
   positionContainer.className = "position-item-container";
-
   const positionText = document.createElement("div");
   positionText.className = "position-item-text";
   positionText.innerText = name;
-  const positionBtns = renderCounter(count);
-
-  let specsContainer = "";
-  if (specs) {
-    specsContainer = renderSpecsSelect(specs);
-  }
-
-  let levelsContainer = "";
-  if (levels) {
-    levelsContainer = renderLevelsSelect(levels);
-  }
-
-  positionContainer.append(
-    positionText,
-    positionBtns,
-    specsContainer,
-    levelsContainer
-  );
-
   return positionContainer;
-};
+}
+
+// const renderPosition = (name, count, specs, levels) => {
+//   const positionContainer = document.createElement("div");
+//   positionContainer.className = "position-item-container";
+
+//   const positionText = document.createElement("div");
+//   positionText.className = "position-item-text";
+//   positionText.innerText = name;
+//   const positionBtns = renderCounter(count);
+
+//   let specsContainer = "";
+//   if (specs) {
+//     specsContainer = renderSpecsSelect(specs);
+//   }
+
+//   let levelsContainer = "";
+//   if (levels) {
+//     levelsContainer = renderLevelsSelect(levels);
+//   }
+
+//   positionContainer.append(
+//     positionText,
+//     positionBtns,
+//     specsContainer,
+//     levelsContainer
+//   );
+
+//   return positionContainer;
+// };
 
 const renderCounter = count => {
   const counterBtnContainer = document.createElement("div");
