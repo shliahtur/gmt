@@ -28,3 +28,28 @@
 .glide__arrow--right{
     background-image: url('../assets/img/arrow-right.svg')
 }
+.glide__bullets{
+    left: 0% !important;
+    transform: translateX(-0%) !important;
+}
+@media screen and (max-width: 650px){
+    .glide__arrow--left{
+        display: none !important;
+    }
+    .glide__arrow--right{
+        display: none !important;
+    }
+    
+}
+@media screen and (max-width: 1000px){
+    .test-desc{
+        max-width: 500px !important;
+    }
+   
+}
+@media screen and (max-width: 750px){
+    .test-desc{
+        max-width: 400px !important;
+    }
+   
+}

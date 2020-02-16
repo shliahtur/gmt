@@ -801,8 +801,20 @@ footer{
          cursor: pointer;
 
      }
+     .header-main{
+         padding: 0;
+     }
  }
   #burger-icon.close-button{
      background: url('../assets/img/close_icon.svg') no-repeat;
 
  }
+  @media screen and (max-width:600px){
+      .contact-form{
+          min-width: 100%;
+      }
+      .office{
+          display: none;
+      }
+  } 
+

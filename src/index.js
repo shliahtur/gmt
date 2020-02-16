@@ -1,7 +1,7 @@
 import './styles/style.css';
 import renderSlider from './scripts/slider';
 import renderCalc from './scripts/calc';
-
+import * as _ from 'lodash';
 
 renderCalc();
 renderSlider();
@@ -38,6 +38,13 @@ for (let i = 0; i < tableTexts.length; i++) {
 let menuButton = document.getElementById('burger-icon')
 menuButton.style.cursor = 'pointer';
 menuButton.onclick = function () {
-    document.getElementById('modal-menu').style.display = 'block';
-    menuButton.classList.add('close-button')
+    if(document.getElementById('modal-menu').style.display === 'none'){
+        document.getElementById('modal-menu').style.display = 'block';
+        menuButton.classList.add('close-button')
+    }
+    else{
+        document.getElementById('modal-menu').style.display = 'none';
+        menuButton.classList.remove('close-button')
+    }
+
 }

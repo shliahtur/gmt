@@ -3,10 +3,19 @@ import "../../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
 import "../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css";
 
 
-const config = { 
+let config = { 
     type: 'carousel',
-    perView: 3,
+    perView:  window.innerWidth >= 900 ? 3 : 1 ,
     focusAt: 'center',
+}
+
+
+window.onresize = function (e) {
+   let width = e.target.outerWidth
+   if(width >= 900){
+     config.perView = 1;
+     renderSlider();
+   }
 }
 
 const renderSlider = () => 

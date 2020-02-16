@@ -1,23 +1,47 @@
 import { data } from "./data";
 
 const root = document.querySelector("#calc");
-const reportRoot = document.querySelector(".report-table");
+const reportRoot = document.querySelector(".report-table tbody");
+const totalRoot = document.querySelector('.report-total-value');
 
-var state = {
-};
-var report = [];
+var state = {};
 
 const addPosition = e => {
   const parent = e.target.parentNode;
   const input = parent.querySelector("input");
   input.value = +input.value + 1;
+  const position = parent.parentNode.querySelector(".position-item-text").innerText
+  const dictionaries = data[position]
+  const item = {
+    position,
+    count: 1,
+    dictionaries,
+    specialization: dictionaries[0].specialization,
+    level: Object.entries(dictionaries[0].levels)[0][0],
+    price: Object.entries(dictionaries[0].levels)[0][1],
+  }
 
-  const positionName = parent.parentNode.querySelector(".position-item-text")
-    .innerText;
-  const positions = data[positionName];
-  const count = state[positionName] ? state[positionName].count + 1 : 1;
-  state[positionName] = { count, positions };
-  renderBarItem();
+  let id = Object.keys(state).length;
+  let isExist = false;
+  if (id > 0) {
+    for (let el in state) {
+      if (_.isEqual(_.omit(state[el], ['count']), _.omit(item, ['count']))) {    // if item is already exist (excluding count property from comparison)
+        ++state[el].count;
+        isExist = true;
+        break;
+      }
+    }
+    if (!isExist) {
+      id = ++id;
+      state[id] = item;
+    }
+  }
+  else {
+    id = ++id;
+    state[id] = item;
+  }
+  renderBarItems();
+  renderReportItems();
 };
 const removePosition = e => {
   const parent = e.target.parentNode;
@@ -34,93 +58,111 @@ const removePosition = e => {
   } else {
     state[positionName] = { count, positions };
   }
-  renderBarItem();
+  renderBarItems();
 };
 
-
-const addItemToReport = (item) => {
-  report[item.name] = {
-      count: item.count,
-      level: item.level,
-      price: item.price
-  }
-  console.log(report)
+const calculateTotal = () => {
+ const trs = reportRoot.querySelectorAll('tr')
+ let ItemTotal = 0
+ trs.forEach(tr => {
+   const count = tr.querySelector('.report-count').innerText
+   const price = tr.querySelector('.report-price').innerText
+    ItemTotal = (+count * +price) + 1250
+ });
+  totalRoot.innerText = ItemTotal
 }
-const renderBarItem = () => {
+
+const renderReportItems = () => {
+  reportRoot.innerHTML = '';
+  for (const el in state) {
+  const tr = document.createElement('tr')
+  const innerTR = `<tr>
+  <td>${state[el].specialization}</td>
+  <td>${state[el].level}</td>
+  <td class='report-count'>${state[el].count}</td>
+  <td class='report-price'>${state[el].price}</td>
+  <td>1250</td>
+  </tr>`  
+  tr.innerHTML = innerTR;
+  reportRoot.append(tr)
+  }
+  calculateTotal();
+}
+const renderBarItems = () => {
   const container = document.querySelector(".bar-container");
   container.innerHTML = "";
   for (const el in state) {
+    const name = state[el].position
     const count = state[el].count;
-    const specs = state[el].positions.map(x => x.specialization);
-    const levels = state[el].positions.map(x => x.level[0])[0];
-    const position = renderPosition(el, count, specs, levels);
+    const specialization = state[el].specialization;
+    const level = state[el].level;
+    const dictionaries = state[el].dictionaries;
+    const position = renderPosition(name, count, specialization, level, dictionaries);
     container.append(position);
-    const report = {
-      name: specs[0],
-      count,
-      level: Object.keys(levels)[0],
-      price: levels[Object.keys(levels)[0]]
-    }
-    addItemToReport(report)
   }
 };
+const onSpecSelectChange = (e) => {
+   const levelSelect = e.target.nextSibling;
+   const inner = JSON.parse(e.target.value);
+   let levelsOptions = "";
+    for (let el in inner) {
+      levelsOptions += `<option value=${inner[el]}>${el}</option>`;
+    }
+   levelSelect.innerHTML = levelsOptions
+   
+}
 
-const renderSpecsSelect = data => {
+const renderSpecsSelect = dictionaries => {
   const specs = document.createElement("select");
+  specs.onchange = (e) => onSpecSelectChange(e);
   let specOptions = "";
-  data.forEach(spec => {
-    specOptions += `<option>${spec}</option>`;
+
+  dictionaries.forEach(spec => {
+    const value = JSON.stringify(spec.levels[0]);
+    specOptions += `<option value=${value}>${spec.specialization}</option>`;
   });
   specs.innerHTML = specOptions;
   return specs;
 };
-const renderLevelsSelect = data => {
+
+const renderLevelsSelect = dictionaries => {
   const levels = document.createElement("select");
   let levelsOptions = "";
-  for (let el in data) {
-    levelsOptions += `<option value=${data[el]}>${el}</option>`;
+  const levels = dictionaries[0].levels
+  for(const level in levels){
+    levelsOptions += `<option value=${level}>${level}</option>`;
   }
   levels.innerHTML = levelsOptions;
   return levels;
 };
 
-const renderPosition = (name) => {
+const renderPosition = (position, count, specialization, level, dictionaries) => {
   const positionContainer = document.createElement("div");
   positionContainer.className = "position-item-container";
+
   const positionText = document.createElement("div");
   positionText.className = "position-item-text";
-  positionText.innerText = name;
+  positionText.innerText = position;
+  const positionBtns = renderCounter(count);
+
+  let specsContainer = "";
+  let levelsContainer = "";
+  if (dictionaries) {
+    specsContainer = renderSpecsSelect(dictionaries, specialization);
+    levelsContainer = renderLevelsSelect(dictionaries, level);
+  }
+  const selectsContainer = document.createElement('div');
+  selectsContainer.className = "selects-container";
+  selectsContainer.append(specsContainer, levelsContainer)
+
+  positionContainer.append(
+    positionText,
+    positionBtns,
+    selectsContainer
+  );
+
   return positionContainer;
-}
-
-// const renderPosition = (name, count, specs, levels) => {
-//   const positionContainer = document.createElement("div");
-//   positionContainer.className = "position-item-container";
-
-//   const positionText = document.createElement("div");
-//   positionText.className = "position-item-text";
-//   positionText.innerText = name;
-//   const positionBtns = renderCounter(count);
-
-//   let specsContainer = "";
-//   if (specs) {
-//     specsContainer = renderSpecsSelect(specs);
-//   }
-
-//   let levelsContainer = "";
-//   if (levels) {
-//     levelsContainer = renderLevelsSelect(levels);
-//   }
-
-//   positionContainer.append(
-//     positionText,
-//     positionBtns,
-//     specsContainer,
-//     levelsContainer
-//   );
-
-//   return positionContainer;
-// };
+};
 
 const renderCounter = count => {
   const counterBtnContainer = document.createElement("div");
@@ -154,7 +196,6 @@ const renderPositions = () => {
   const barContainer = document.createElement("div");
   barContainer.className = "bar-container";
   positions.append(barContainer);
-
   Object.keys(data).forEach(x => {
     const position = renderPosition(x);
     positions.appendChild(position);
