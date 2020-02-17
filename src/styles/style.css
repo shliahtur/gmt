@@ -4,7 +4,7 @@
 @import "calc.css";
 @import "checkbox.css";
 @import "slider.css";
-
+@import "select.css";
 :root {
     --gradient: linear-gradient(90deg, #F27931 0%, #F27931 0.01%, #F2A135 110.55%);
     --font: #2B3D5C;

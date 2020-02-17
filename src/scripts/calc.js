@@ -1,4 +1,5 @@
 import { data } from "./data";
+import customizeSelect from './select';
 
 const root = document.querySelector("#calc");
 const reportRoot = document.querySelector(".report-table tbody");
@@ -31,32 +32,34 @@ const addPosition = e => {
   renderBarItems();
   renderReportItems();
 };
+
 const removePosition = e => {
   const parent = e.target.parentNode;
+  let id = parent.parentNode.id;
   const input = parent.querySelector('input');
   const position = parent.parentNode.querySelector('.position-item-text').innerText
   let lastPosition = '';
-  for(let item in state){
-    if(position === state[item].position){
-       lastPosition = item
+  if(!id){
+    for(let item in state){
+      if(position === state[item].position){
+         lastPosition = item
+      }
+    }
+    delete state[lastPosition]
+  }
+  else{
+    const count = state[id] ? state[id].count - 1 : 0;
+    if (count < 1) {
+      delete state[id];
+    } else {
+      state[id] = { count };
     }
   }
-  delete state[lastPosition]
+
   if(+input.value > 1){
     --input.value;
   }
-  else{
 
-  }
- 
-  const positionName = parent.parentNode.querySelector(".position-item-text").innerText;
-  const positions = data[positionName];
-  const count = state[positionName] ? state[positionName].count - 1 : 0;
-  if (count < 1) {
-    delete state[positionName];
-  } else {
-    state[positionName] = { count, positions };
-  }
   renderBarItems();
   renderReportItems();
 };
@@ -106,6 +109,9 @@ const renderBarItems = () => {
 
 const renderSpecsSelect = (dictionaries, id) => {
   const defaultValue = state[id].specialization;
+  const selectContainer = document.createElement('div');
+  selectContainer.className = "custom-select";
+  selectContainer.setAttribute('style', 'width:160px; margin: 0 20px;')
   const specs = document.createElement("select");
   specs.onchange = (e) => onSpecSelectChange(e);
   let specOptions = "";
@@ -114,20 +120,28 @@ const renderSpecsSelect = (dictionaries, id) => {
     specOptions += `<option ${spec.specialization === defaultValue ? "selected" : ""} value=${value}>${spec.specialization}</option>`;
   });
   specs.innerHTML = specOptions;
-  return specs;
+  selectContainer.appendChild(specs)
+  customizeSelect(selectContainer);
+  return selectContainer;
 };
 
 const renderLevelsSelect = (dictionaries, id) => {
   const levelsContainer = document.createElement("select");
+  const selectContainer = document.createElement('div');
+  selectContainer.className = "custom-select";
+  selectContainer.setAttribute('style', 'width:180px')
   levelsContainer.onchange = (e) => onLevelSelectChange(e);
   const defaultValue = state[id].level;
-  let levelsOptions = "";
+  let levelsOptions = ""; 
   const levels = dictionaries[0].levels
   for(const level in levels){
     levelsOptions += `<option ${level === defaultValue ? "selected" : ""} value=${levels[level]}>${level}</option>`;
   }
   levelsContainer.innerHTML = levelsOptions;
-  return levelsContainer;
+  selectContainer.appendChild(levelsContainer)
+  customizeSelect(selectContainer);
+
+  return selectContainer;
 };
 
 const onSpecSelectChange = (e) => {
@@ -193,7 +207,6 @@ const renderPosition = (name, count, specialization, level, dictionaries, id) =>
     positionBtns,
     selectsContainer
   );
-
   return positionContainer;
 };
 
