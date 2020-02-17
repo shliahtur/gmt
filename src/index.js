@@ -1,7 +1,6 @@
 import './styles/style.css';
 import renderSlider from './scripts/slider';
 import renderCalc from './scripts/calc';
-import * as _ from 'lodash';
 
 renderCalc();
 renderSlider();

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GMT</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class='wr'>
+                <div class='header-line'>
+                    <div class="header-logo"></div>
+                    <nav class="header-menu">
+                        <ul class="header-menu-items">
+                            <li class="header-menu-item">
+                                <a href="#main" autofocus>Home</a>
+                            </li>
+                            <li class="header-menu-item header-menu-item-active">
+                                <a href="#about">About us</a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a href="#calculator">Calculator</a>
+                            </li>
+                            <li class="header-menu-item">
+                                <a href="#testemonials">Testemonials</a>
+                            </li>
+                        </ul>
+                        <button class="header-button">Contact us</button>
+                    </nav>
+                    <div id='burger-icon'></div>
+                    <div id='modal-menu'>
+                        <ul class="modal-menu-items">
+                            <li class="modal-menu-item header-menu-item-active">
+                                <a href="#about">About us</a>
+                            </li>
+                            <li class="modal-menu-item">
+                                <a href="#calculator">Calculator</a>
+                            </li>
+                            <li class="modal-menu-item">
+                                <a href="#testemonials">Testemonials</a>
+                            </li>
+                        </ul>
+                        <button class="modal-header-button ">Contact us</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="header-main">
+                <div class='wr'>
+                    <div class="header-title">Get My Team</div>
+                    <div class="header-description">Transperant and simple way to build your
+                        own </br> development team or software R&D center in Ukraine
+                    </div>
+                    <button id="calc-button">Get price Calculator</button>
+                </div>
+            </div>
+            </header>
+            <section class='about-us'>
+                <div class="wr">
+                    <div class='key-items'>
+                        <div class='key-item'>
+                            <div class='key-item-icon icon-pay'></div>
+                            <h3 class='key-item-heading'> Company fee 1250$</h3>
+                            <p class='key-item-text'> Get uour Senior or any other level developer for only 1250$</p>
+                        </div>
+                        <div class='key-item'>
+                            <div class='key-item-icon icon-team'></div>
+                            <h3 class='key-item-heading'>Buyout is possible</h3>
+                            <p class='key-item-text'>Enjoy working with your team? Buyout is possible.</p>
+                        </div>
+                        <div class='key-item'>
+                            <div class='key-item-icon icon-brand'></div>
+                            <h3 class='key-item-heading'>Your branding</h3>
+                            <p class='key-item-text'>Development center under your brand.</p>
+                        </div>
+                    </div>
+                    <h2 class=about-us-title>About us</h2>
+                    <div class="about-us-wr">
+                        <div class=about-us-image></div>
+                        <div class=about-us-main>
+                            <div class='about-us-heading'>
+                                Set-up an entire development center, inconvenience-free, in Ukraine. We take care of
+                                everything.
+                            </div>
+                            <p class='about-us-text'>You enjoy full transparency, from your employees salaries to the
+                                electricity bill. The
+                                Crunch team manages the entire process, down to the smallest details.</br></br>
+                                The process is entirely transparent. Your new office. Your vision. Your new employees
+                                are aligned to your company goals. They are managed in full compliance with your needs
+                                and objectives. We’ll increase or decrease the size of your team at your request.
+                            </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <section class='calculator'>
+            <div class='wr'>
+                <h2>Calculator</h2>
+                <div class="calc-container">
+                <div class="calc-form">
+                    <h3 class='calc-item-heading'>1.Choose team composition</h3>
+                        <div id="calc"></div>
+
+     
+                    <h3 class='calc-item-heading'>2. Do you dedicated room/office?</h3>
+                    <div class="checks-container">
+                        <div class="check-container">
+                            <input type="radio" value='true' id="isRoomTrue" name="isRoom" />
+                            <label for="isRoomTrue">Yes</label>
+                        </div>
+                        <div class="check-container">
+                            <input type="radio" value='false' id="isRoomFalse" name="isRoom" />
+                            <label for="isRoomFalse">No</label>
+                        </div>
+                    </div>
+                    <h3 class='calc-item-heading'>3. Do you need offce room/office branding?</h3>
+                    <div class="checks-container">
+                        <div class="check-container">
+                            <input type="radio" value='true' id="isBrandingTrue" name="isBranding" />
+                            <label for="isBrandingTrue">Yes</label>
+                        </div>
+                        <div class="check-container">
+                            <input type="radio" value='false' id="isBrandingFalse" name="isBranding" />
+                            <label for="isBrandingFalse">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="report">
+                    <div class="report-container">
+                    <div class="report-header">
+                        <div class="report-header-title">
+                            Report
+                        </div>
+                    </div>
+                  <table class="report-table">
+                      <thead>
+                          <th>Developers</th>
+                          <th>Level</th>
+                          <th>Quantity</th>
+                          <th>Salary approximate</th>
+                          <th>Company fee</th>
+                      </thead>
+                      <tbody>
+                          
+                      </tbody>
+                  </table>
+                  <div class="report-total-container">
+                      <div class="report-total-title">Total</div>
+                      <div class="report-total-value">0</div>
+                  </div>
+                </div>
+                    <button class="report-pdf-btn">Get PDF report</button>
+            </div>
+            </div>
+            </div>
+        </section>
+        <section class='service'>
+            <div class='wr'>
+                <h2 class='orange'>Service fee</h2>
+                <div class='service-wr'>
+                    <ul class="table">
+                        <li class='table-heading'>Service fee</li>
+                        <li class='table-item'><span class="table-text">HR support</span></li>
+                        <li class='table-item'><span class="table-text">Payroll and Legal support</span></li>
+                        <li class='table-item'><span class="table-text">Competence development</span></li>
+                        <li class='table-item'><span class="table-text">Managed Workstation</span></li>
+                        <li class='table-item'><span class="table-text">Managed Workstation</span></li>
+                    </ul>
+                    <ul class="table table-right">
+                        <li class='table-heading'>Discount</li>
+                        <li class='table-item'><span class="table-text">3% - starting from 7 FTE</span></li>
+                        <li class='table-item'><span class="table-text">7% - starting from 10 FTE</span></li>
+                        <li class='table-item'><span class="table-text"></span></li>
+                        <li class='table-item'><span class="table-text"></span></li>
+                        <li class='table-item'><span class="table-text"></span></li>
+                    </ul>
+
+                    <div class="tabs-container">
+                        <ul class="tabs">
+                            <li class=" active">
+                                <a href="" class='table-heading'>Service fee</a>
+                            </li>
+                            <li>
+                                <a href="" class='table-heading'>Discount</a>
+                            </li>
+                        </ul>
+                        <div class="tabs-content">
+                            <div class="tabs-panel active" data-index="0">
+                                <li class='table-item'><span class="table-text">HR support</span></li>
+                                <li class='table-item'><span class="table-text">Payroll and Legal support</span></li>
+                                <li class='table-item'><span class="table-text">Competence development</span></li>
+                                <li class='table-item'><span class="table-text">Managed Workstation</span></li>
+                                <li class='table-item'><span class="table-text">Managed Workstation</span></li>
+                            </div>
+                            <div class="tabs-panel tabs-panel-right" data-index="1">
+                                <li class='table-item'><span class="table-text">3% - starting from 7 FTE</span></li>
+                                <li class='table-item'><span class="table-text">7% - starting from 10 FTE</span></li>
+                                <li class='table-item'><span class="table-text"></span></li>
+                                <li class='table-item'><span class="table-text"></span></li>
+                                <li class='table-item'><span class="table-text"></span></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='office'>
+            <div class='wr'>
+                <h2>Welcome to our office</h2>
+                <div class="glide office-slider">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <div class="office-pic office-pic-1"></div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="office-pic office-pic-2"></div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="office-pic office-pic-3"></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        <button class="glide__bullet" data-glide-dir="=0"></button>
+                        <button class="glide__bullet" data-glide-dir="=1"></button>
+                        <button class="glide__bullet" data-glide-dir="=2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='reviews'>
+            <div class='wr'>
+                <h2>Testimonials</h2>
+                <div class="glide testemonials-slider">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                            <li class="glide__slide">
+                                <div class="test-container">
+                                    <div class="test-icon test-icon-1"></div>
+                                    <div class="test-name">Declan</div>
+                                    <div class="test-position">CTO at Timegen</div>
+                                    <div class="test-desc">Yes, it’s been really good. He’s currently developing the app
+                                        with the mockups we sent through (still waiting on the finalised designs) and
+                                        seems to be making really good progress.
+                                        He’s also very quick to respond to any queris we have. So it’s been good so far!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="test-container">
+                                    <div class="test-icon test-icon-2"></div>
+                                    <div class="test-name">Matt</div>
+                                    <div class="test-position">CEO at USA Software Company</div>
+                                    <div class="test-desc">He’s doing fantastic and I don’t want to change a thing!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="glide__slide">
+                                <div class="test-container">
+                                    <div class="test-icon test-icon-3"></div>
+                                    <div class="test-name">Peter</div>
+                                    <div class="test-position">Product manager at Denmark Software Company</div>
+                                    <div class="test-desc">Michael, Thanks for asking. We are very happy with a current
+                                        set up 🙂
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+                    </div>
+                    <div class="glide__bullets" data-glide-el="controls[nav]">
+                        <button class="glide__bullet" data-glide-dir="=0"></button>
+                        <button class="glide__bullet" data-glide-dir="=1"></button>
+                        <button class="glide__bullet" data-glide-dir="=2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class='contacts'>
+            <div class='wr'>
+                <h2 class="orange">Contact us</h2>
+                <div class='contacts-all-wr'>
+                    <div class="contact-form">
+                        <h3 class='contact-form-heading'>Contact form</h3>
+                        <input class="contact-form-input" type='text' placeholder="Your name">
+                        <input class="contact-form-input" type='text' placeholder="Your email">
+                        <textarea class="contact-form-input contact-form-input-longer" type='textarea'
+                            placeholder="Your message">
+                        </textarea>
+
+                        <button class=contact-form-button>Send message</button>
+                    </div>
+                    <div class="contact-wr">
+                        <div class=contact-cards-wr>
+                            <div class="contact-card">
+                                <div class='contact-icon'></div>
+                                <div class="contact-city">Ukraine, Lviv</div>
+                                <a class='contact-phone' href="tel:+380(93)1550226‬">+380 (93) 155 02 26‬</a>
+                                </br>
+                                <span class="contact-name">Andriy</span>
+                            </div>
+                            <div class="contact-card">
+                                <div class='contact-icon'></div>
+                                <div class="contact-city">Ukraine, Kyiv</div>
+                                <a class='contact-phone' href="tel:+380 (68) 558 54 59‬‬">+380 (68) 558 54 59‬‬</a>
+                                </br>
+                                <span class="contact-name">Andriy</span>
+                            </div>
+                            <div class="contact-card">
+                                <div class='contact-icon'></div>
+                                <div class="contact-city">UK, London</div>
+                                <a class='contact-phone' href="tel:‭+447482878179‬">‭+447482878179‬‬</a>
+                                </br>
+                                <span class="contact-name">Andrew</span>
+                            </div>
+                            <div class="contact-card">
+                                <div class='contact-icon'></div>
+                                <div class="contact-city">USA, New York</div>
+                                <a class='contact-phone' href="tel:‭+19292072713  ‬">‭+19292072713‬</a>
+                                </br>
+                                <span class="contact-name">Andrew</span>
+                            </div>
+                        </div>
+                        <button class='contact-us-button'>Contact us</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="wr">
+                <div class="footer-top">
+                    <div class='footer-logo header-logo'></div>
+                    <div class='footer-icons'>
+                        <span class='footer-title'>Follow us</span>
+                        <ul class="footer-ul">
+                            <li class='footer-li'><a href="" class="footer-icon fb"></a></li>
+                            <li class='footer-li'><a href="" class="footer-icon clutch"></a></li>
+                            <li class='footer-li'><a href="" class="footer-icon inst"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class='footer-line'></div>
+                <div class='footer-bottom'>
+                    <ul class='footer-nav'>
+                        <li class='footer-nav-item'><a href='#' class='footer-link'>Home</a></li>
+                        <li class='footer-nav-item'><a href='#' class='footer-link'>About us</a></li>
+                        <li class='footer-nav-item'><a href='#' class='footer-link'>Calculator</a></li>
+                        <li class='footer-nav-item'><a href='#' class='footer-link'>Testemonials</a></li>
+                        <li class='footer-nav-item'><a href='#' class='footer-link'>Contact us</a></li>
+                    </ul>
+                    <div class='footer-rights'> &copy; Copyright 2020, GMT</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+<script type="text/javascript" src="main.17971ad886b54e7a8c0e.js"></script></body>
+
+</html>

@@ -721,6 +721,9 @@ footer{
 .report-pdf-btn{
     margin-top: 20px;
 }
+.selects-container{
+    display: flex;
+}
 
 @media screen and (max-width: 715px){
 

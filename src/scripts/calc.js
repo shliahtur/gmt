@@ -21,40 +21,32 @@ const addPosition = e => {
     price: Object.entries(dictionaries[0].levels)[0][1],
   }
   let id = parent.parentNode.id;
-  console.log(id)
-   id = id ? id : Object.keys(state).length;
-    let isExist = false;
-//   if (id > 0) {
-    for (let el in state) {
-      if (_.isEqual(_.omit(state[el], ['count']), _.omit(item, ['count']))) {    // if item is already exist (excluding count property from comparison)
-        ++state[el].count;
-        isExist = true;
-        break;
-      }
+   if (id) {
+      ++state[id].count;
     }
-    if (!isExist) {
-      id = ++id;
+    else {
+      id = Object.keys(state).length + 1;
       state[id] = item;
     }
-
-//  }
-  // else {
-  //   id = ++id;
-  //   state[id] = item;
-  // }
   renderBarItems();
   renderReportItems();
 };
 const removePosition = e => {
   const parent = e.target.parentNode;
   const input = parent.querySelector('input');
-  const id = parent.parentNode.id;
+  const position = parent.parentNode.querySelector('.position-item-text').innerText
+  let lastPosition = '';
+  for(let item in state){
+    if(position === state[item].position){
+       lastPosition = item
+    }
+  }
+  delete state[lastPosition]
   if(+input.value > 1){
     --input.value;
-    --state[id].count 
   }
   else{
-    delete state[id]
+
   }
  
   const positionName = parent.parentNode.querySelector(".position-item-text").innerText;
