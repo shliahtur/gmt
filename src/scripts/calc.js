@@ -8,8 +8,8 @@ var state = {};
 
 const addPosition = e => {
   const parent = e.target.parentNode;
-  const input = parent.querySelector("input");
-  input.value = +input.value + 1;
+  const input = parent.querySelector('input');
+  ++input.value;
   const position = parent.parentNode.querySelector(".position-item-text").innerText
   const dictionaries = data[position]
   const item = {
@@ -20,10 +20,11 @@ const addPosition = e => {
     level: Object.entries(dictionaries[0].levels)[0][0],
     price: Object.entries(dictionaries[0].levels)[0][1],
   }
-
-  let id = Object.keys(state).length;
-  let isExist = false;
-  if (id > 0) {
+  let id = parent.parentNode.id;
+  console.log(id)
+   id = id ? id : Object.keys(state).length;
+    let isExist = false;
+//   if (id > 0) {
     for (let el in state) {
       if (_.isEqual(_.omit(state[el], ['count']), _.omit(item, ['count']))) {    // if item is already exist (excluding count property from comparison)
         ++state[el].count;
@@ -35,22 +36,28 @@ const addPosition = e => {
       id = ++id;
       state[id] = item;
     }
-  }
-  else {
-    id = ++id;
-    state[id] = item;
-  }
+
+//  }
+  // else {
+  //   id = ++id;
+  //   state[id] = item;
+  // }
   renderBarItems();
   renderReportItems();
 };
 const removePosition = e => {
   const parent = e.target.parentNode;
-  const input = parent.querySelector("input");
-  if (+input.value > 0) {
-    input.value = +input.value - 1;
+  const input = parent.querySelector('input');
+  const id = parent.parentNode.id;
+  if(+input.value > 1){
+    --input.value;
+    --state[id].count 
   }
-  const positionName = parent.parentNode.querySelector(".position-item-text")
-    .innerText;
+  else{
+    delete state[id]
+  }
+ 
+  const positionName = parent.parentNode.querySelector(".position-item-text").innerText;
   const positions = data[positionName];
   const count = state[positionName] ? state[positionName].count - 1 : 0;
   if (count < 1) {
@@ -59,16 +66,16 @@ const removePosition = e => {
     state[positionName] = { count, positions };
   }
   renderBarItems();
+  renderReportItems();
 };
 
 const calculateTotal = () => {
- const trs = reportRoot.querySelectorAll('tr')
  let ItemTotal = 0
- trs.forEach(tr => {
-   const count = tr.querySelector('.report-count').innerText
-   const price = tr.querySelector('.report-price').innerText
-    ItemTotal = (+count * +price) + 1250
- });
+for(let el in state){
+    const count = state[el].count;
+    const price = state[el].price;
+    ItemTotal += (+count * +price) + 1250
+ }
   totalRoot.innerText = ItemTotal
 }
 
@@ -91,65 +98,99 @@ const renderReportItems = () => {
 const renderBarItems = () => {
   const container = document.querySelector(".bar-container");
   container.innerHTML = "";
+  if(Object.keys(state).length > 0){
   for (const el in state) {
+    const id = el
     const name = state[el].position
     const count = state[el].count;
     const specialization = state[el].specialization;
     const level = state[el].level;
     const dictionaries = state[el].dictionaries;
-    const position = renderPosition(name, count, specialization, level, dictionaries);
+    const position = renderPosition(name, count, specialization, level, dictionaries, id);
     container.append(position);
   }
-};
-const onSpecSelectChange = (e) => {
-   const levelSelect = e.target.nextSibling;
-   const inner = JSON.parse(e.target.value);
-   let levelsOptions = "";
-    for (let el in inner) {
-      levelsOptions += `<option value=${inner[el]}>${el}</option>`;
-    }
-   levelSelect.innerHTML = levelsOptions
-   
 }
+};
 
-const renderSpecsSelect = dictionaries => {
+const renderSpecsSelect = (dictionaries, id) => {
+  const defaultValue = state[id].specialization;
   const specs = document.createElement("select");
   specs.onchange = (e) => onSpecSelectChange(e);
   let specOptions = "";
-
   dictionaries.forEach(spec => {
-    const value = JSON.stringify(spec.levels[0]);
-    specOptions += `<option value=${value}>${spec.specialization}</option>`;
+    const value = JSON.stringify(spec.levels);
+    specOptions += `<option ${spec.specialization === defaultValue ? "selected" : ""} value=${value}>${spec.specialization}</option>`;
   });
   specs.innerHTML = specOptions;
   return specs;
 };
 
-const renderLevelsSelect = dictionaries => {
-  const levels = document.createElement("select");
+const renderLevelsSelect = (dictionaries, id) => {
+  const levelsContainer = document.createElement("select");
+  levelsContainer.onchange = (e) => onLevelSelectChange(e);
+  const defaultValue = state[id].level;
   let levelsOptions = "";
   const levels = dictionaries[0].levels
   for(const level in levels){
-    levelsOptions += `<option value=${level}>${level}</option>`;
+    levelsOptions += `<option ${level === defaultValue ? "selected" : ""} value=${levels[level]}>${level}</option>`;
   }
-  levels.innerHTML = levelsOptions;
-  return levels;
+  levelsContainer.innerHTML = levelsOptions;
+  return levelsContainer;
 };
 
-const renderPosition = (position, count, specialization, level, dictionaries) => {
+const onSpecSelectChange = (e) => {
+  const levelSelect = e.target.nextSibling;
+  const inner = JSON.parse(e.target.value);
+  const specialization = e.target.options[e.target.selectedIndex].text;
+  const id = e.target.parentNode.parentNode.id;
+  const level = Object.keys(inner)[0];
+  const price = Object.values(inner)[0];
+
+  e.target.options[e.target.selectedIndex].text;
+  state[id] = {
+     ...state[id],
+     specialization,
+     level,
+     price
+  }
+  let levelsOptions = "";
+   for (let el in inner) {
+     levelsOptions += `<option value=${inner[el]}>${el}</option>`;
+   }
+  levelSelect.innerHTML = levelsOptions
+  renderReportItems();
+}
+
+const onLevelSelectChange = (e) => {
+  const id = e.target.parentNode.parentNode.id;
+  const price = e.target.value;
+  const level = e.target.options[e.target.selectedIndex].text;
+  state[id] = {
+    ...state[id],
+    price,
+    level
+  }
+  renderReportItems();
+}
+
+const renderPosition = (name, count, specialization, level, dictionaries, id) => {
   const positionContainer = document.createElement("div");
   positionContainer.className = "position-item-container";
 
   const positionText = document.createElement("div");
   positionText.className = "position-item-text";
-  positionText.innerText = position;
+  positionText.innerText = name;
   const positionBtns = renderCounter(count);
+  if(id){
+    positionContainer.id = id;
+  }
+
 
   let specsContainer = "";
   let levelsContainer = "";
   if (dictionaries) {
-    specsContainer = renderSpecsSelect(dictionaries, specialization);
-    levelsContainer = renderLevelsSelect(dictionaries, level);
+    specsContainer = renderSpecsSelect(dictionaries, id);
+    levelsContainer = renderLevelsSelect(dictionaries, id);
   }
   const selectsContainer = document.createElement('div');
   selectsContainer.className = "selects-container";
