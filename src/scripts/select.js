@@ -1,9 +1,10 @@
+
+
 var x, i, j, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 const customizeSelect = (x) =>{
 x = x;
   selElmnt = x.getElementsByTagName("select")[0];
-  console.log(selElmnt)
   /* For each element, create a new DIV that will act as the selected item: */
   a = document.createElement("DIV");
   a.setAttribute("class", "select-selected");

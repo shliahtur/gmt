@@ -671,10 +671,11 @@ footer{
 }
 .report-container{
     font-family: 'Avenir';
-    min-height: 300px;
+    min-height: 150px;
     background: white;
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.05);
     position: relative;
+    width: 500px;
 }
 .report-header{
     background: var(--header);
@@ -694,7 +695,6 @@ footer{
     height: 60px;
     bottom: 0;
     width: 100%;
-    position: absolute;
 }
 .report-total-title{
     color:#58657D;
@@ -711,18 +711,57 @@ footer{
     right: 40px;
 }
 .report-table{
-    margin: auto;
-    margin-top: 20px;
+    margin: 25px 30px 50px 30px;
     width: -webkit-fill-available;
+    font-family: 'Avenir';
+}
+.report-table tbody{
+    line-height: 34px;
+    color: var(--font);
+    font-weight: 600;
+}
+.report-table tbody:before {
+    content: "-";
+    display: block;
+    line-height: 10px;
+    color: transparent;
+}
+.report-table tr{
+    padding: 10px 0;
+    font-family: 'Avenir'
 }
 .report-table th{
     font-size: 12px;
+    text-align: right;
+    font-family: 'Avenir';
+    color: var(--font)
+
 }
+.report-table th:nth-child(1){
+    text-align: left
+}
+.report-table th:nth-child(2){
+    text-align: left
+}
+.report-table tbody td{
+    text-align: right;
+} 
+.report-table tbody td:nth-child(1){
+    text-align: left;
+} 
+.report-table tbody td:nth-child(2){
+    text-align: left;
+} 
+
 .report-pdf-btn{
     margin-top: 20px;
+    width: 250px;
+    height: 40px;
 }
 .selects-container{
     display: flex;
+    position: absolute;
+    left: 230px;
 }
 
 @media screen and (max-width: 715px){

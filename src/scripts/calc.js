@@ -39,6 +39,7 @@ const removePosition = e => {
   const input = parent.querySelector('input');
   const position = parent.parentNode.querySelector('.position-item-text').innerText
   let lastPosition = '';
+
   if(!id){
     for(let item in state){
       if(position === state[item].position){
@@ -52,7 +53,7 @@ const removePosition = e => {
     if (count < 1) {
       delete state[id];
     } else {
-      state[id] = { count };
+      state[id] = { ...state[id], count };
     }
   }
 
@@ -110,8 +111,8 @@ const renderBarItems = () => {
 const renderSpecsSelect = (dictionaries, id) => {
   const defaultValue = state[id].specialization;
   const selectContainer = document.createElement('div');
-  selectContainer.className = "custom-select";
-  selectContainer.setAttribute('style', 'width:160px; margin: 0 20px;')
+  selectContainer.className = "select"
+  selectContainer.setAttribute('style', 'width:160px')
   const specs = document.createElement("select");
   specs.onchange = (e) => onSpecSelectChange(e);
   let specOptions = "";
@@ -121,15 +122,15 @@ const renderSpecsSelect = (dictionaries, id) => {
   });
   specs.innerHTML = specOptions;
   selectContainer.appendChild(specs)
-  customizeSelect(selectContainer);
+ // customizeSelect(specs);
   return selectContainer;
 };
 
 const renderLevelsSelect = (dictionaries, id) => {
   const levelsContainer = document.createElement("select");
   const selectContainer = document.createElement('div');
-  selectContainer.className = "custom-select";
-  selectContainer.setAttribute('style', 'width:180px')
+  selectContainer.className = "select";
+  selectContainer.setAttribute('style', 'width:120px; margin: 0 20px;')
   levelsContainer.onchange = (e) => onLevelSelectChange(e);
   const defaultValue = state[id].level;
   let levelsOptions = ""; 
@@ -138,20 +139,18 @@ const renderLevelsSelect = (dictionaries, id) => {
     levelsOptions += `<option ${level === defaultValue ? "selected" : ""} value=${levels[level]}>${level}</option>`;
   }
   levelsContainer.innerHTML = levelsOptions;
-  selectContainer.appendChild(levelsContainer)
-  customizeSelect(selectContainer);
-
+   selectContainer.appendChild(levelsContainer)
+  // customizeSelect(selectContainer);
   return selectContainer;
 };
 
 const onSpecSelectChange = (e) => {
-  const levelSelect = e.target.nextSibling;
+  const levelSelect = e.target.parentNode.parentNode.querySelectorAll('select')[0];
   const inner = JSON.parse(e.target.value);
   const specialization = e.target.options[e.target.selectedIndex].text;
-  const id = e.target.parentNode.parentNode.id;
+  const id = e.target.parentNode.parentNode.parentNode.id;
   const level = Object.keys(inner)[0];
   const price = Object.values(inner)[0];
-
   e.target.options[e.target.selectedIndex].text;
   state[id] = {
      ...state[id],
@@ -168,7 +167,8 @@ const onSpecSelectChange = (e) => {
 }
 
 const onLevelSelectChange = (e) => {
-  const id = e.target.parentNode.parentNode.id;
+
+  const id = e.target.parentNode.parentNode.parentNode.id;
   const price = e.target.value;
   const level = e.target.options[e.target.selectedIndex].text;
   state[id] = {
@@ -197,16 +197,22 @@ const renderPosition = (name, count, specialization, level, dictionaries, id) =>
   if (dictionaries) {
     specsContainer = renderSpecsSelect(dictionaries, id);
     levelsContainer = renderLevelsSelect(dictionaries, id);
+    const selectsContainer = document.createElement('div');
+    selectsContainer.className = "selects-container";
+    selectsContainer.append(levelsContainer, specsContainer);
+    positionContainer.append(
+      positionText,
+      positionBtns,
+      selectsContainer
+    );
   }
-  const selectsContainer = document.createElement('div');
-  selectsContainer.className = "selects-container";
-  selectsContainer.append(specsContainer, levelsContainer)
-
+ else{
   positionContainer.append(
     positionText,
-    positionBtns,
-    selectsContainer
+    positionBtns
   );
+ }
+
   return positionContainer;
 };
 
@@ -226,7 +232,6 @@ const renderCounter = count => {
   input.setAttribute("type", "text");
   input.value = count ? count : 0;
   input.className = "counter-input";
-
   counterBtnContainer.append(minusBtn, input, plusBtn);
 
   return counterBtnContainer;
