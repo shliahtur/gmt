@@ -156,13 +156,11 @@ button{
     background: var(--gradient);
 }
 .header-title{
-    font-family: 'Avenir', serif;
+    font-family: 'Lora';
     font-size: 46px;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--orange);
     text-align: center;
-    font-weight: 500;
-
 }
 .header-main{
     padding: 176px 0;
@@ -174,6 +172,11 @@ button{
     margin-top: -44px;
 
 }
+.title{
+    font-family: 'Lora';
+    font-size: 32px;
+    font-weight: 700;
+}
 .header-description{
     font-family: "Avenir";
     font-style: normal;
@@ -183,8 +186,6 @@ button{
     margin: 50px 0;
     text-align: center;
     color: #FFFFFF;
-    font-weight: 500;
-
 }
 #calc-button{
     margin: 0 auto;
