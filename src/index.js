@@ -1,7 +1,10 @@
 import './styles/style.css';
 import renderSlider from './scripts/slider';
 import renderCalc from './scripts/calc';
+import setAnchors from './scripts/anchor';
+import createModal from './scripts/modal';
 
+setAnchors();
 renderCalc();
 renderSlider();
 
@@ -24,8 +27,6 @@ for (let el of tabLinks) {
     });
 }
 
-
-
 var tableTexts = document.getElementsByClassName('table-text');
 
 for (let i = 0; i < tableTexts.length; i++) {
@@ -45,6 +46,14 @@ menuButton.onclick = function () {
         document.getElementById('modal-menu').style.display = 'none';
         menuButton.classList.remove('close-button')
     }
-
 }
 
+const getPDFButton = document.querySelector('.report-pdf-btn');
+const pdfInnerModal = document.querySelector('.report-modal');
+
+getPDFButton.addEventListener('click', () => createModal(pdfInnerModal));
+
+const pdfSubmit = document.querySelector('.modal-submit');
+const successModal = document.querySelector('.success-modal');
+
+pdfSubmit.addEventListener('click', () => createModal(successModal));

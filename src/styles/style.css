@@ -5,6 +5,7 @@
 @import "checkbox.css";
 @import "slider.css";
 @import "select.css";
+@import "modal.css";
 :root {
     --gradient: linear-gradient(90deg, #F27931 0%, #F27931 0.01%, #F2A135 110.55%);
     --font: #2B3D5C;
@@ -22,7 +23,6 @@ a{
     color: var(--font);
     /* margin: 9px 0 -15px 0; */
     display: block;
-    font-weight: 800;
     font-size: 14px;
     line-height: 24px;
     outline: none;
@@ -123,7 +123,6 @@ button{
 }
 .modal-menu-items a{
     font-family: 'Avenir';
-    font-weight: 800;
     font-size: 32px;
     line-height: 40px;
     color: #2B3D5C;
@@ -189,8 +188,9 @@ button{
 }
 #calc-button{
     margin: 0 auto;
-    display: flex;
-    height: 40px;
+    width: 130px;
+    padding: 9px 40px;
+    font-family: 'Avenir';
 }
 /*HEADER*/
 
@@ -762,6 +762,28 @@ footer{
     display: flex;
     position: absolute;
     left: 230px;
+}
+.fake-btn{
+    background: var(--gradient);
+    color: white;
+    padding: 5px 30px;
+    border-radius: 4px;
+}
+.report-modal{
+    text-align: center;
+}
+.rep-btns{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.rep-btns button{
+    width: 100%;
+    height: 40px;
+}
+.success-modal{
+     text-align: center;
+     margin-top: 23px;
 }
 
 @media screen and (max-width: 715px){

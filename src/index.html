@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header" id="main">
             <div class='wr'>
                 <div class='header-line'>
                     <div class="header-logo"></div>
@@ -30,7 +30,7 @@
                                 <a href="#testemonials">Testemonials</a>
                             </li>
                         </ul>
-                        <button class="header-button">Contact us</button>
+                        <a href="#contact" class="fake-btn header-button">Contact us</a>
                     </nav>
                     <div id='burger-icon'></div>
                     <div id='modal-menu'>
@@ -56,30 +56,36 @@
                     <div class="header-description">Transperant and simple way to build your
                         own </br> development team or software R&D center in Ukraine
                     </div>
-                    <button id="calc-button">Get price Calculator</button>
+                    <a href="#calculator" class="fake-btn" id="calc-button">Get price Calculator</a>
                 </div>
             </div>
             </header>
             <section class='about-us'>
                 <div class="wr">
                     <div class='key-items'>
+                        <a href="#calculator">
                         <div class='key-item'>
                             <div class='key-item-icon icon-pay'></div>
                             <h3 class='key-item-heading'> Company fee 1250$</h3>
                             <p class='key-item-text'> Get uour Senior or any other level developer for only 1250$</p>
                         </div>
+                    </a>
+                    <a href="#calculator">
                         <div class='key-item'>
                             <div class='key-item-icon icon-team'></div>
                             <h3 class='key-item-heading'>Buyout is possible</h3>
                             <p class='key-item-text'>Enjoy working with your team? Buyout is possible.</p>
                         </div>
+                        </a>
+                        <a href="#calculator">
                         <div class='key-item'>
                             <div class='key-item-icon icon-brand'></div>
                             <h3 class='key-item-heading'>Your branding</h3>
                             <p class='key-item-text'>Development center under your brand.</p>
                         </div>
+                        </a>
                     </div>
-                    <h2 class=about-us-title>About us</h2>
+                    <h2 class=about-us-title id="about">About us</h2>
                     <div class="about-us-wr">
                         <div class=about-us-image></div>
                         <div class=about-us-main>
@@ -102,7 +108,7 @@
         </section>
         <section class='calculator'>
             <div class='wr'>
-                <h2>Calculator</h2>
+                <h2 id="calculator">Calculator</h2>
                 <div class="calc-container">
                 <div class="calc-form">
                     <h3 class='calc-item-heading'>1.Choose team composition</h3>
@@ -157,6 +163,20 @@
                   </div>
                 </div>
                     <button class="report-pdf-btn">Get PDF report</button>
+                    <div class="report-modal" style="display: none">
+                        <div class="modal-title">Report</div>
+                        <div class="modal-desc">Get report to your email</div>
+                        <input type='text' class="modal-input" name="reportName" placeholder="You name">
+                        <input type='text' class="modal-input" name="reportEmail" placeholder="You email">
+                        <div class="rep-btns">
+                            <button class="modal-cancel-btn">Back</button>
+                            <button class="modal-submit">Get PDF report</button>
+                        </div>
+                    </div>
+                    <div class="success-modal" style="display: none">
+                        <div class="modal-title">Thank you!</div>
+                        <div class="modal-desc">We will get back to you up to 8 hours</div>
+                    </div>
             </div>
             </div>
             </div>
@@ -236,7 +256,7 @@
                 </div>
             </div>
         </section>
-        <section class='reviews'>
+        <section class='reviews' id="testemonials">
             <div class='wr'>
                 <h2>Testimonials</h2>
                 <div class="glide testemonials-slider">
@@ -287,7 +307,7 @@
                 </div>
             </div>
         </section>
-        <section class='contacts'>
+        <section class='contacts' id="contact">
             <div class='wr'>
                 <h2 class="orange">Contact us</h2>
                 <div class='contacts-all-wr'>
@@ -354,9 +374,9 @@
                 <div class='footer-bottom'>
                     <ul class='footer-nav'>
                         <li class='footer-nav-item'><a href='#' class='footer-link'>Home</a></li>
-                        <li class='footer-nav-item'><a href='#' class='footer-link'>About us</a></li>
-                        <li class='footer-nav-item'><a href='#' class='footer-link'>Calculator</a></li>
-                        <li class='footer-nav-item'><a href='#' class='footer-link'>Testemonials</a></li>
+                        <li class='footer-nav-item'><a href='#about' class='footer-link'>About us</a></li>
+                        <li class='footer-nav-item'><a href='#calculator' class='footer-link'>Calculator</a></li>
+                        <li class='footer-nav-item'><a href='#testemonials' class='footer-link'>Testemonials</a></li>
                         <li class='footer-nav-item'><a href='#' class='footer-link'>Contact us</a></li>
                     </ul>
                     <div class='footer-rights'> &copy; Copyright 2020, GMT</div>
