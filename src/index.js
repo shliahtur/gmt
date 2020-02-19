@@ -59,3 +59,9 @@ const successModal = document.querySelector('.success-modal');
 
 pdfSubmit.addEventListener('click', () => createModal(successModal));
 
+
+const researchModal = document.querySelector('.research-modal')
+  
+setTimeout(
+    () => createModal(researchModal),
+ 30000)
