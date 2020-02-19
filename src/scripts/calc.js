@@ -1,5 +1,5 @@
 import { data } from "./data";
-import customizeSelect from './select';
+import createModal from './modal';
 
 const root = document.querySelector("#calc");
 const reportRoot = document.querySelector(".report-table tbody");
@@ -24,14 +24,66 @@ const addPosition = e => {
   let id = parent.parentNode.id;
    if (id) {
       ++state[id].count;
+      renderBarItems();
+      renderReportItems();
     }
     else {
       id = Object.keys(state).length + 1;
       state[id] = item;
+      renderBarItems();
+      renderReportItems();
+      renderPositionModal(id);
+      renderBarItems();
     }
-  renderBarItems();
-  renderReportItems();
 };
+
+const renderPositionModal = (id) => {
+  if(window.innerWidth < 1000){
+    const inner = document.getElementById(id);
+    const innerSelects =  inner.querySelector('.selects-container');
+    const counter = inner.querySelector('.counter-btn-container');
+    const position = inner.querySelector('.position-item-text');
+    const levelSelect = innerSelects.firstChild;
+    innerSelects.style.cssText = "display:flex; justify-content: center; flex-direction: column; position: initial; left: 0;";
+    const specSelect = innerSelects.children[1];
+    specSelect.style.cssText = "width: 100%; margin: 30px 0; display: flex;";
+    counter.style.display = 'none';
+    position.style.display = 'none';
+    levelSelect.style.display = 'none';
+
+    const nextBtn = document.createElement('button')
+    nextBtn.innerText = "Next";
+    nextBtn.className = "calc-next-btn"
+    nextBtn.addEventListener('click', () => {renderLevelModal(inner)})
+    innerSelects.appendChild(nextBtn)
+    const label = document.createElement('div');
+    label.innerText = "Candidate Specialization";
+    label.className = "calc-model-label";
+    inner.prepend(label)
+    createModal(inner)
+  }
+}
+const renderLevelModal = (inner) => {
+    const innerSelects =  inner.querySelector('.selects-container');
+    const counter = inner.querySelector('.counter-btn-container');
+    const position = inner.querySelector('.position-item-text');
+    const nextBtn = inner.querySelector('.calc-next-btn');
+    const specSelect = innerSelects.children[1];
+    const levelSelect = innerSelects.firstChild;
+    levelSelect.style.cssText = "width: 100%; margin: 30px 0; display: flex;";
+    specSelect.style.display = 'none';
+    counter.style.display = 'none';
+    position.style.display = 'none';
+    nextBtn.style.display = 'none'
+
+    const saveBtn = document.createElement('button')
+    saveBtn.innerText = "Save";
+    saveBtn.addEventListener('click', () => {createModal(false)})
+    innerSelects.appendChild(saveBtn)
+    const label = inner.querySelector('.calc-model-label');
+    label.innerText = "Level"
+    createModal(inner)
+}
 
 const removePosition = e => {
   const parent = e.target.parentNode;
@@ -40,7 +92,7 @@ const removePosition = e => {
   const position = parent.parentNode.querySelector('.position-item-text').innerText
   let lastPosition = '';
   
-  if(+input.value > 1){
+  if(+input.value > 0){
     --input.value;
   }
   if(!id){

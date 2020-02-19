@@ -211,7 +211,11 @@
      text-align: center;
      margin-top: 23px;
 }
-
+.calc-model-label{
+    color: var(--font);
+    font-size: 20px;
+    font-weight: 800;
+}
 
 @media screen and (max-width: 1320px){
     .report-container{

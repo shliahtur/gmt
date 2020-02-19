@@ -8,7 +8,6 @@ const renderSlider = () =>
    $(document).ready(function(){
       $('.office-slider').slick({  // .testemonials-slider
          centerMode: true,
-         centerPadding: '60px',
          slidesToShow: 3,
          slidesToScroll: 1,
          autoplay: true, 
@@ -17,7 +16,24 @@ const renderSlider = () =>
          pauseOnHover: false,
          draggable:true,    
          adaptiveHeight: true,
-         
+         responsive: [
+            {
+              breakpoint: 1100,
+              settings: {
+                centerMode: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              }
+            } 
+          ]
+      });
+      $('.test-slider').slick({  // .testemonials-slider
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         draggable:true,    
+         dots: true,
+         prevArrow: $('.prev'),
+         nextArrow: $('.next'),
       });
     });
 }

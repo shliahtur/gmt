@@ -602,10 +602,13 @@ footer{
 .clutch{
     background: url('../assets/img/clutch.svg')
 }
+.office-slider{
+    margin-top: 110px;
+}
 .office-pic{
-    background-size: 300px;
+    background-size: 350px;
     width: 300px;
-    height: 200px;
+    height: 270px;
     background-repeat: no-repeat;
 }
 .office-pic-1{
@@ -622,6 +625,8 @@ footer{
     text-align: center;
     font-family: "Avenir";
     color: var(--font);
+    width: 100% !important;
+    transform: scale(1) !important;
 }
 .test-icon{
     margin: auto;
@@ -753,8 +758,35 @@ footer{
       .contact-form{
           min-width: 100%;
       }
-      .office{
-          display: none;
-      }
   } 
 
+  @media screen and (max-width: 1000px){
+    .selects-container{
+        display: none;
+    }
+  }
+  @media screen and (max-width: 800px){
+    .calc-container {
+        flex-wrap: wrap;
+    }
+    #report {
+        margin: auto;
+        width: 100%;
+    }
+    .report-container {
+        max-width: none;
+    }
+    .calc-item-heading {
+        font-size: 16px;
+    }
+    .position-item-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 18px;
+    }
+  }
+  .show{
+      display: block !important;
+  }

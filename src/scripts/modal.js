@@ -15,12 +15,17 @@ overlay.onclick = (e) => cancelModal(e);
 closeBtn.onclick = (e) => cancelModal(e);
 
 const createModal = (inner) => { 
-    inner.style = "display: block";
-    container.innerHTML = '';
-    container.appendChild(inner);
-    modal.append(closeBtn, container)
-    overlay.appendChild(modal)
-    document.body.prepend(overlay);
+    if(!inner){
+        overlay.remove();
+    }
+    else{
+        inner.style = "display: block";
+        container.innerHTML = '';
+        container.appendChild(inner);
+        modal.append(closeBtn, container)
+        overlay.appendChild(modal)
+        document.body.prepend(overlay);
+    }
 } 
 
 const cancelModal = (e) => {
