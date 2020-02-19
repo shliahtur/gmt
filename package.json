@@ -1,9 +1,8 @@
 {
   "name": "gmt",
-  "homepage": "https://testcab.csd.ua/registers",
+  "homepage": "https://github.com/shliahtur/gmt#readme",
   "version": "1.0.0",
   "description": "",
-  
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
@@ -21,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/shliahtur/gmt/issues"
   },
-  "homepage": "https://github.com/shliahtur/gmt#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
