@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GMT</title>
-    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header" id="main">
             <div class='wr'>
                 <div class='header-line'>
                     <div class="header-logo"></div>
@@ -30,7 +30,7 @@
                                 <a href="#testemonials">Testemonials</a>
                             </li>
                         </ul>
-                        <button id="header-button">Contact us</button>
+                        <a href="#contact" class="fake-btn header-button">Contact us</a>
                     </nav>
                     <div id='burger-icon'></div>
                     <div id='modal-menu'>
@@ -56,30 +56,36 @@
                     <div class="header-description">Transperant and simple way to build your
                         own </br> development team or software R&D center in Ukraine
                     </div>
-                    <button id="calc-button">Get price Calculator</button>
+                    <a href="#calculator" class="fake-btn" id="calc-button">Get price Calculator</a>
                 </div>
             </div>
             </header>
             <section class='about-us'>
                 <div class="wr">
                     <div class='key-items'>
+                        <a href="#calculator">
                         <div class='key-item'>
                             <div class='key-item-icon icon-pay'></div>
                             <h3 class='key-item-heading'> Company fee 1250$</h3>
                             <p class='key-item-text'> Get uour Senior or any other level developer for only 1250$</p>
                         </div>
+                    </a>
+                    <a href="#calculator">
                         <div class='key-item'>
                             <div class='key-item-icon icon-team'></div>
                             <h3 class='key-item-heading'>Buyout is possible</h3>
                             <p class='key-item-text'>Enjoy working with your team? Buyout is possible.</p>
                         </div>
+                        </a>
+                        <a href="#calculator">
                         <div class='key-item'>
                             <div class='key-item-icon icon-brand'></div>
                             <h3 class='key-item-heading'>Your branding</h3>
                             <p class='key-item-text'>Development center under your brand.</p>
                         </div>
+                        </a>
                     </div>
-                    <h2 class=about-us-title>About us</h2>
+                    <h2 class="title" id="about">About us</h2>
                     <div class="about-us-wr">
                         <div class=about-us-image></div>
                         <div class=about-us-main>
@@ -101,8 +107,8 @@
         </div>
         </section>
         <section class='calculator'>
-            <div class='wr'>
-                <h2>Calculator</h2>
+            <div class='wr wr-calc'>
+                <h2 class="title" id="calculator">Calculator</h2>
                 <div class="calc-container">
                 <div class="calc-form">
                     <h3 class='calc-item-heading'>1.Choose team composition</h3>
@@ -147,6 +153,9 @@
                           <th>Salary approximate</th>
                           <th>Company fee</th>
                       </thead>
+                      <tbody>
+                          
+                      </tbody>
                   </table>
                   <div class="report-total-container">
                       <div class="report-total-title">Total</div>
@@ -154,13 +163,27 @@
                   </div>
                 </div>
                     <button class="report-pdf-btn">Get PDF report</button>
+                    <div class="report-modal" style="display: none">
+                        <div class="modal-title">Report</div>
+                        <div class="modal-desc">Get report to your email</div>
+                        <input type='text' class="modal-input" name="reportName" placeholder="You name">
+                        <input type='text' class="modal-input" name="reportEmail" placeholder="You email">
+                        <div class="rep-btns">
+                            <button class="modal-cancel-btn">Back</button>
+                            <button class="modal-submit">Get PDF report</button>
+                        </div>
+                    </div>
+                    <div class="success-modal" style="display: none">
+                        <div class="modal-title">Thank you!</div>
+                        <div class="modal-desc">We will get back to you up to 8 hours</div>
+                    </div>
             </div>
             </div>
             </div>
         </section>
         <section class='service'>
             <div class='wr'>
-                <h2 class='orange'>Service fee</h2>
+                <h2  class='title orange'>Service fee</h2>
                 <div class='service-wr'>
                     <ul class="table">
                         <li class='table-heading'>Service fee</li>
@@ -210,36 +233,21 @@
         </section>
         <section class='office'>
             <div class='wr'>
-                <h2>Welcome to our office</h2>
-                <div class="glide office-slider">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            <li class="glide__slide">
-                                <div class="office-pic office-pic-1"></div>
-                            </li>
-                            <li class="glide__slide">
-                                <div class="office-pic office-pic-2"></div>
-                            </li>
-                            <li class="glide__slide">
-                                <div class="office-pic office-pic-3"></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="glide__bullets" data-glide-el="controls[nav]">
-                        <button class="glide__bullet" data-glide-dir="=0"></button>
-                        <button class="glide__bullet" data-glide-dir="=1"></button>
-                        <button class="glide__bullet" data-glide-dir="=2"></button>
-                    </div>
+                <h2 class="title">Welcome to our office</h2>
+                <div class="office-slider center slider">
+                    <div class="office-pic office-pic-1"></div>                  
+                    <div class="office-pic office-pic-2"></div>
+                    <div class="office-pic office-pic-3"></div>
+                    <div class="office-pic office-pic-1"></div>                  
+                    <div class="office-pic office-pic-2"></div>
+                    <div class="office-pic office-pic-3"></div>
                 </div>
-            </div>
+                </div>
         </section>
-        <section class='reviews'>
+        <section class='reviews' id="testemonials">
             <div class='wr'>
-                <h2>Testimonials</h2>
-                <div class="glide testemonials-slider">
-                    <div class="glide__track" data-glide-el="track">
-                        <ul class="glide__slides">
-                            <li class="glide__slide">
+                <h2 class="title">Testimonials</h2>
+                        <div class="test-slider">
                                 <div class="test-container">
                                     <div class="test-icon test-icon-1"></div>
                                     <div class="test-name">Declan</div>
@@ -250,8 +258,6 @@
                                         He’s also very quick to respond to any queris we have. So it’s been good so far!
                                     </div>
                                 </div>
-                            </li>
-                            <li class="glide__slide">
                                 <div class="test-container">
                                     <div class="test-icon test-icon-2"></div>
                                     <div class="test-name">Matt</div>
@@ -259,8 +265,6 @@
                                     <div class="test-desc">He’s doing fantastic and I don’t want to change a thing!
                                     </div>
                                 </div>
-                            </li>
-                            <li class="glide__slide">
                                 <div class="test-container">
                                     <div class="test-icon test-icon-3"></div>
                                     <div class="test-name">Peter</div>
@@ -269,24 +273,22 @@
                                         set up 🙂
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                            <div class="paginator">
+                                <ul>
+                                    <li class="prev"></li>
+                                    <li class="next"></li>
+                                </ul>
+                            </div>
+                            
                     </div>
-                    <div class="glide__arrows" data-glide-el="controls">
-                        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
-                        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
-                    </div>
-                    <div class="glide__bullets" data-glide-el="controls[nav]">
-                        <button class="glide__bullet" data-glide-dir="=0"></button>
-                        <button class="glide__bullet" data-glide-dir="=1"></button>
-                        <button class="glide__bullet" data-glide-dir="=2"></button>
-                    </div>
+                   
                 </div>
             </div>
         </section>
-        <section class='contacts'>
+        <section class='contacts' id="contact">
             <div class='wr'>
-                <h2 class="orange">Contact us</h2>
+                <h2 class="title orange">Contact us</h2>
                 <div class='contacts-all-wr'>
                     <div class="contact-form">
                         <h3 class='contact-form-heading'>Contact form</h3>
@@ -351,9 +353,9 @@
                 <div class='footer-bottom'>
                     <ul class='footer-nav'>
                         <li class='footer-nav-item'><a href='#' class='footer-link'>Home</a></li>
-                        <li class='footer-nav-item'><a href='#' class='footer-link'>About us</a></li>
-                        <li class='footer-nav-item'><a href='#' class='footer-link'>Calculator</a></li>
-                        <li class='footer-nav-item'><a href='#' class='footer-link'>Testemonials</a></li>
+                        <li class='footer-nav-item'><a href='#about' class='footer-link'>About us</a></li>
+                        <li class='footer-nav-item'><a href='#calculator' class='footer-link'>Calculator</a></li>
+                        <li class='footer-nav-item'><a href='#testemonials' class='footer-link'>Testemonials</a></li>
                         <li class='footer-nav-item'><a href='#' class='footer-link'>Contact us</a></li>
                     </ul>
                     <div class='footer-rights'> &copy; Copyright 2020, GMT</div>

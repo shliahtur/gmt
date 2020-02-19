@@ -1,8 +1,11 @@
 import './styles/style.css';
 import renderSlider from './scripts/slider';
 import renderCalc from './scripts/calc';
+import setAnchors from './scripts/anchor';
+import createModal from './scripts/modal';
 
 
+setAnchors();
 renderCalc();
 renderSlider();
 
@@ -25,8 +28,6 @@ for (let el of tabLinks) {
     });
 }
 
-
-
 var tableTexts = document.getElementsByClassName('table-text');
 
 for (let i = 0; i < tableTexts.length; i++) {
@@ -35,10 +36,25 @@ for (let i = 0; i < tableTexts.length; i++) {
     }
 }
 
-
 let menuButton = document.getElementById('burger-icon')
 menuButton.style.cursor = 'pointer';
 menuButton.onclick = function () {
-    document.getElementById('modal-menu').style.display = 'block';
-    menuButton.classList.add('close-button')
+    if(document.getElementById('modal-menu').style.display === 'none'){
+        document.getElementById('modal-menu').style.display = 'block';
+        menuButton.classList.add('close-button')
+    }
+    else{
+        document.getElementById('modal-menu').style.display = 'none';
+        menuButton.classList.remove('close-button')
+    }
 }
+
+const getPDFButton = document.querySelector('.report-pdf-btn');
+const pdfInnerModal = document.querySelector('.report-modal');
+
+getPDFButton.addEventListener('click', () => createModal(pdfInnerModal));
+
+const pdfSubmit = document.querySelector('.modal-submit');
+const successModal = document.querySelector('.success-modal');
+
+pdfSubmit.addEventListener('click', () => createModal(successModal));
