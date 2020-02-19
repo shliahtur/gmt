@@ -36,10 +36,13 @@ const addPosition = e => {
 const removePosition = e => {
   const parent = e.target.parentNode;
   let id = parent.parentNode.id;
-  const input = parent.querySelector('input');
+  const input = parent.querySelector('input');  
   const position = parent.parentNode.querySelector('.position-item-text').innerText
   let lastPosition = '';
-
+  
+  if(+input.value > 1){
+    --input.value;
+  }
   if(!id){
     for(let item in state){
       if(position === state[item].position){
@@ -56,11 +59,6 @@ const removePosition = e => {
       state[id] = { ...state[id], count };
     }
   }
-
-  if(+input.value > 1){
-    --input.value;
-  }
-
   renderBarItems();
   renderReportItems();
 };

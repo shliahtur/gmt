@@ -1,29 +1,25 @@
-import Glide from '@glidejs/glide'
-import "../../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
-import "../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css";
-
-
-let config = { 
-    type: 'carousel',
-    perView:  window.innerWidth >= 900 ? 3 : 1 ,
-    focusAt: 'center',
-}
-
-
-window.onresize = function (e) {
-   let width = e.target.outerWidth
-   if(width >= 900){
-     config.perView = 1;
-     renderSlider();
-   }
-}
+import $ from "jquery";
+import 'slick-carousel';
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const renderSlider = () => 
 {
-   return [
-       new Glide('.office-slider', config).mount(),
-       new Glide('.testemonials-slider').mount()
-   ]
+   $(document).ready(function(){
+      $('.office-slider').slick({  // .testemonials-slider
+         centerMode: true,
+         centerPadding: '60px',
+         slidesToShow: 3,
+         slidesToScroll: 1,
+         autoplay: true, 
+         autoplaySpeed: 2500,
+         infinite: true,
+         pauseOnHover: false,
+         draggable:true,    
+         adaptiveHeight: true,
+         
+      });
+    });
 }
 
 export default renderSlider;

@@ -4,6 +4,7 @@ import renderCalc from './scripts/calc';
 import setAnchors from './scripts/anchor';
 import createModal from './scripts/modal';
 
+
 setAnchors();
 renderCalc();
 renderSlider();

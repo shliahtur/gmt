@@ -603,15 +603,13 @@ footer{
     background: url('../assets/img/clutch.svg')
 }
 .office-pic{
-    background-size: 380px;
-    width: 380px;
-    height: 240px;
-    border-radius: 10px;
+    background-size: 300px;
+    width: 300px;
+    height: 200px;
     background-repeat: no-repeat;
 }
 .office-pic-1{
     background-image: url('../assets/img/office1.png');
-
 }
 .office-pic-2{
     background-image: url('../assets/img/office2.png');
