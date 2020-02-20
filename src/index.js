@@ -1,11 +1,10 @@
 import './styles/style.css';
 import renderSlider from './scripts/slider';
 import renderCalc from './scripts/calc';
-import setAnchors from './scripts/anchor';
 import createModal from './scripts/modal';
+import validateForm from './scripts/validation';
 
 
-setAnchors();
 renderCalc();
 renderSlider();
 
@@ -54,10 +53,37 @@ const pdfInnerModal = document.querySelector('.report-modal');
 
 getPDFButton.addEventListener('click', () => createModal(pdfInnerModal));
 
-const pdfSubmit = document.querySelector('.modal-submit');
+const submitBtns = document.querySelectorAll('.modal-submit');
 const successModal = document.querySelector('.success-modal');
 
-pdfSubmit.addEventListener('click', () => createModal(successModal));
+
+submitBtns.forEach(submitBtn => {
+    submitBtn.addEventListener('click', (e) => {
+        const isValid = validateForm(e);
+        if(isValid){
+            createModal(successModal)
+        }
+    });
+});
+
+
+
+const inputs = document.querySelectorAll('input')
+inputs.forEach(input => {
+    input.addEventListener('keypress', (e) => 
+    {
+        e.target.classList.remove('input-error');
+        const type = input.getAttribute('type');
+        const isEmail = type === "email" ? true : false;
+        if(isEmail){
+            const errors = document.querySelectorAll('.email-error')
+            errors.forEach(el => { 
+                el.remove();
+            });
+        }
+    })
+});
+
 
 
 const researchModal = document.querySelector('.research-modal')

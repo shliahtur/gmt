@@ -63,7 +63,7 @@
             <section class='about-us'>
                 <div class="wr">
                     <div class='key-items'>
-                        <a href="#calculator">
+                        <a href="#service">
                         <div class='key-item'>
                             <div class='key-item-icon icon-pay'></div>
                             <h3 class='key-item-heading'> Company fee 1250$</h3>
@@ -167,7 +167,7 @@
                         <div class="modal-title">Report</div>
                         <div class="modal-desc">Get report to your email</div>
                         <input type='text' class="modal-input" name="reportName" placeholder="You name">
-                        <input type='text' class="modal-input" name="reportEmail" placeholder="You email">
+                        <input type='email' class="modal-input" name="reportEmail" placeholder="You email">
                         <div class="rep-btns">
                             <button class="modal-cancel-btn">Back</button>
                             <button class="modal-submit">Get PDF report</button>
@@ -181,7 +181,7 @@
             </div>
             </div>
         </section>
-        <section class='service'>
+        <section class='service' id="service">
             <div class='wr'>
                 <h2  class='title orange'>Service fee</h2>
                 <div class='service-wr'>
@@ -293,12 +293,11 @@
                     <div class="contact-form">
                         <h3 class='contact-form-heading'>Contact form</h3>
                         <input class="contact-form-input" type='text' placeholder="Your name">
-                        <input class="contact-form-input" type='text' placeholder="Your email">
-                        <textarea class="contact-form-input contact-form-input-longer" type='textarea'
-                            placeholder="Your message">
-                        </textarea>
-
-                        <button class=contact-form-button>Send message</button>
+                        <input class="contact-form-input" type='email' placeholder="Your email">
+                        <textarea cols="60" rows="3" class="contact-form-input contact-form-input-longer" placeholder="Your message"></textarea>
+                        <div>
+                        <button class="modal-submit contact-form-button">Send message</button>
+                    </div>
                     </div>
                     <div class="contact-wr">
                         <div class=contact-cards-wr>
@@ -366,7 +365,7 @@
             <div class="modal-title">Do you want to get market research?</div>
             <div class="modal-desc">Get report to your email</div>
             <input type='text' class="modal-input" name="reportName" placeholder="You name">
-            <input type='text' class="modal-input" name="reportEmail" placeholder="You email">
+            <input type='email' class="modal-input" name="reportEmail" placeholder="You email">
             <div class="rep-btns">
                 <button class="modal-submit">Get market research</button>
             </div>

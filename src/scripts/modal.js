@@ -34,7 +34,17 @@ const cancelModal = (e) => {
         e.target.className === "close-btn" ||
         e.target.className === "modal-cancel-btn"
         ){
+            const inputs = overlay.querySelectorAll('input');
+            const errors = overlay.querySelectorAll('.email-error')
+            inputs.forEach(el => {
+                el.value = '';
+                el.classList.remove('input-error')
+            });
+            errors.forEach(el => { 
+                el.remove();
+            });
             overlay.remove();
+
         }
 }
 
