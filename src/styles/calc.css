@@ -223,6 +223,13 @@
     background: var(--orange);
     box-shadow: none;
 }
+.fee-discount{
+    position: absolute;
+    bottom: 12px;
+    right: 30px;
+    color: #bbbbbb;
+}
+
 
 @media screen and (max-width: 1320px){
     .report-container{

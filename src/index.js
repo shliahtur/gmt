@@ -66,8 +66,6 @@ submitBtns.forEach(submitBtn => {
     });
 });
 
-
-
 const inputs = document.querySelectorAll('input')
 inputs.forEach(input => {
     input.addEventListener('keypress', (e) => 

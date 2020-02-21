@@ -29,7 +29,7 @@ const addPosition = e => {
     renderReportItems();
     renderCountersValue();
   } else {
-    id = Object.keys(state).length + 1;
+    id = Object.keys(state).length ? +Object.keys(state)[Object.keys(state).length - 1] + 1 : 1;
     state[id] = item;
     renderBarItems();
     renderReportItems();
@@ -37,59 +37,6 @@ const addPosition = e => {
     renderBarItems();
     renderCountersValue();
   }
-};
-
-const renderPositionModal = id => {
-  if (window.innerWidth < 1000) {
-    const inner = document.getElementById(id);
-    const innerSelects = inner.querySelector(".selects-container");
-    const counter = inner.querySelector(".counter-btn-container");
-    const position = inner.querySelector(".position-item-text");
-    const levelSelect = innerSelects.firstChild;
-    innerSelects.style.cssText =
-      "display:flex; justify-content: center; flex-direction: column; position: initial; left: 0;";
-    const specSelect = innerSelects.children[1];
-    specSelect.style.cssText = "width: 100%; margin: 30px 0; display: flex;";
-    counter.style.display = "none";
-    position.style.display = "none";
-    levelSelect.style.display = "none";
-
-    const nextBtn = document.createElement("button");
-    nextBtn.innerText = "Next";
-    nextBtn.className = "calc-next-btn";
-    nextBtn.addEventListener("click", () => {
-      renderLevelModal(inner);
-    });
-    innerSelects.appendChild(nextBtn);
-    const label = document.createElement("div");
-    label.innerText = "Candidate Specialization";
-    label.className = "calc-model-label";
-    inner.prepend(label);
-    createModal(inner);
-  }
-};
-const renderLevelModal = inner => {
-  const innerSelects = inner.querySelector(".selects-container");
-  const counter = inner.querySelector(".counter-btn-container");
-  const position = inner.querySelector(".position-item-text");
-  const nextBtn = inner.querySelector(".calc-next-btn");
-  const specSelect = innerSelects.children[1];
-  const levelSelect = innerSelects.firstChild;
-  levelSelect.style.cssText = "width: 100%; margin: 30px 0; display: flex;";
-  specSelect.style.display = "none";
-  counter.style.display = "none";
-  position.style.display = "none";
-  nextBtn.style.display = "none";
-
-  const saveBtn = document.createElement("button");
-  saveBtn.innerText = "Save";
-  saveBtn.addEventListener("click", () => {
-    createModal(false);
-  });
-  innerSelects.appendChild(saveBtn);
-  const label = inner.querySelector(".calc-model-label");
-  label.innerText = "Level";
-  createModal(inner);
 };
 
 const removePosition = e => {
@@ -123,18 +70,98 @@ const removePosition = e => {
   renderCountersValue();
 };
 
+const renderPositionModal = id => {
+  if (window.innerWidth < 1000) {
+    const inner = document.getElementById(id);
+    const innerSelects = inner.querySelector(".selects-container");
+    const counter = inner.querySelector(".counter-btn-container");
+    const position = inner.querySelector(".position-item-text");
+    const levelSelect = innerSelects.children[1];
+    innerSelects.style.cssText =
+      "display:flex; justify-content: center; flex-direction: column; position: initial; left: 0;";
+    const specSelect = innerSelects.firstChild;
+    specSelect.style.cssText = "width: 100%; margin: 30px 0; display: flex;";
+    counter.style.display = "none";
+    position.style.display = "none";
+    levelSelect.style.display = "none";
+
+    const nextBtn = document.createElement("button");
+    nextBtn.innerText = "Next";
+    nextBtn.className = "calc-next-btn";
+    nextBtn.addEventListener("click", () => {
+      renderLevelModal(inner);
+    });
+    innerSelects.appendChild(nextBtn);
+    const label = document.createElement("div");
+    label.innerText = "Candidate Specialization";
+    label.className = "calc-model-label";
+    inner.prepend(label);
+    createModal(inner);
+  }
+};
+const renderLevelModal = inner => {
+  const innerSelects = inner.querySelector(".selects-container");
+  const counter = inner.querySelector(".counter-btn-container");
+  const position = inner.querySelector(".position-item-text");
+  const nextBtn = inner.querySelector(".calc-next-btn");
+  const specSelect = innerSelects.firstChild;
+  const levelSelect = innerSelects.children[1]; 
+  levelSelect.style.cssText = "width: 100%; margin: 30px 0; display: flex;";
+  specSelect.style.display = "none"; 
+  counter.style.display = "none";
+  position.style.display = "none";
+  nextBtn.style.display = "none";
+
+  const saveBtn = document.createElement("button");
+  saveBtn.innerText = "Save";
+  saveBtn.addEventListener("click", () => {
+    createModal(false);
+  });
+  innerSelects.appendChild(saveBtn);
+  const label = inner.querySelector(".calc-model-label");
+  label.innerText = "Level";
+  createModal(inner);
+};
+
+const getFeeCoef = () => {
+  const totalCount = Object.values(state).map(x => x.count).reduce((sum, count) => sum + count);
+  let feeCoeff = 1; 
+  switch(true){
+    case totalCount >= 10:
+        feeCoeff = 0.93
+        break;
+    case totalCount >= 7:
+      feeCoeff = 0.97
+      break;
+  } 
+  return feeCoeff;
+}
+
 const calculateTotal = () => {
   let ItemTotal = 0;
+  const feeCoef = getFeeCoef();
   for (let el in state) {
     const count = state[el].count;
     const price = state[el].price;
-    ItemTotal += +count * +price + 1250;
+    ItemTotal += +count * +price + count * 1250 * feeCoef;
   }
   totalRoot.innerText = ItemTotal;
 };
 
+const renderDiscount = () => {
+  const feeCoef = getFeeCoef();
+  const discount = Math.round((1 - feeCoef) * 100);
+  const discountMsg = document.querySelector('.fee-discount');
+  if(discount > 0){
+    discountMsg.innerText = `* - ${discount}% fee discount`
+  }
+  else{
+    discountMsg.innerText = ''
+  }
+}
 const renderReportItems = () => {
   reportRoot.innerHTML = "";
+  const feeCoef = getFeeCoef();
   for (const el in state) {
     const tr = document.createElement("tr");
     const innerTR = `<tr>
@@ -142,13 +169,15 @@ const renderReportItems = () => {
   <td>${state[el].level}</td>
   <td class='report-count'>${state[el].count}</td>
   <td class='report-price'>${state[el].price}</td>
-  <td>1250</td>
+  <td>${state[el].count * 1250 * feeCoef}${feeCoef < 1 ? '*' : ''}</td>
   </tr>`;
     tr.innerHTML = innerTR;
     reportRoot.append(tr);
   }
-  calculateTotal();
+   renderDiscount();
+   calculateTotal();
 };
+
 const renderBarItems = () => {
   const container = document.querySelector(".bar-container");
   container.innerHTML = "";
@@ -229,7 +258,7 @@ const renderLevelsSelect = (dictionaries, id) => {
 const onSpecSelectChange = e => {
   const levelSelect = e.target.parentNode.parentNode.querySelectorAll(
     "select"
-  )[0];
+  )[1];
   const inner = JSON.parse(e.target.value);
   const specialization = e.target.options[e.target.selectedIndex].text;
   const id = e.target.parentNode.parentNode.parentNode.id;
