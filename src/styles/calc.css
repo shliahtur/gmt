@@ -127,14 +127,14 @@
     font-size: 24px;
     font-weight: 600;
     position: absolute;
-    left: 40px;
+    left: 32px;
 }
 .report-total-value{
     color: var(--orange);
     font-size: 24px;
     font-weight: 800;
     position: absolute;
-    right: 40px;
+    right: 32px;
 }
 .report-table{
     margin: 25px 30px 50px 30px;
@@ -198,6 +198,9 @@
 .report-modal{
     text-align: center;
 }
+.research-modal{
+    text-align: center;
+}
 .rep-btns{
     margin-top: 30px;
     display: flex;
@@ -216,6 +219,17 @@
     font-size: 20px;
     font-weight: 800;
 }
+.counter-btn:hover{
+    background: var(--orange);
+    box-shadow: none;
+}
+.fee-discount{
+    position: absolute;
+    bottom: 12px;
+    right: 30px;
+    color: #bbbbbb;
+}
+
 
 @media screen and (max-width: 1320px){
     .report-container{

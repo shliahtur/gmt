@@ -53,6 +53,13 @@ button{
     font-weight: 500;
     text-align: center;
 }
+button:hover{
+    box-shadow: 1px 2px 16px 0px #ffe0bc;
+}
+ .fake-btn:hover, .fake-btn:focus{
+    background: #F27931;
+}
+
 .container{
     width: 100%;
     height: 100%;
@@ -150,9 +157,10 @@ button{
     content: "";
     display: block;
     position: absolute;
-    bottom: 45px;
+    bottom: 46px;
     height: 4px;
     width: 100%;
+    border-radius: 3px;
     background: var(--gradient);
 }
 .header-title{
@@ -437,6 +445,8 @@ button{
 .contact-form-input-longer{
     min-height: 120px;
     padding: 0 15px 78px 15px;
+    resize: none;
+    font-family: "Avenir"
 }
 .contact-form-input::placeholder{
     font-size: 14px;
@@ -498,7 +508,7 @@ button{
 .contact-city{
     font-size: 16px;
     line-height: 24px;
-    margin-top: 44px;
+    margin-top: 5px;
     font-weight: 800;
     font-size: 16px;
     line-height: 24px;
@@ -694,7 +704,41 @@ footer{
     font-size: 26px;
     margin-bottom: 15px;
   }
-
+  .email-error{
+    color: #ea6565;
+    margin-top: 8px;
+  }
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  .input-error{
+    animation: shake 0.4s ease-in-out 0s 1;
+    box-shadow: 0 0 0.3em 0px #ff0000;
+  }
+  .contact-icon{
+    display: block;
+    width: 25px;
+    height: 32px;
+    background-size: 1px;
+    background: url('../assets/img/phone.svg') no-repeat;
+    margin: auto;
+    margin-top: 25px;
+    transform: scale(0.9);
+}
 
 @media screen and (max-width: 715px){
 
@@ -711,6 +755,9 @@ footer{
     }
     .footer-title{
         display: none;
+    }
+    .about-us{
+        padding: 0;
     }
 }
 @media screen and (max-width: 940px){
@@ -732,16 +779,6 @@ footer{
      }
      .tabs-container{
          display: block;
-     }
-     .contact-icon{
-         display: block;
-         width: 32px;
-         height: 32px;
-         background: url('../assets/img/phone.svg') no-repeat;
-         margin: 27px auto;
-     }
-     .contact-city{
-         margin-top:-23px;
      }
  }
  @media screen and (max-width: 1410px){
