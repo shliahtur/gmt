@@ -157,7 +157,7 @@ button{
 }
 .header-title{
     font-family: 'Lora';
-    font-size: 46px;
+    font-size: 64px;
     font-weight: 700;
     color: var(--orange);
     text-align: center;
@@ -183,7 +183,7 @@ button{
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
-    margin: 50px 0;
+    margin: 50px 0; 
     text-align: center;
     color: #FFFFFF;
 }
@@ -242,6 +242,7 @@ button{
     line-height: 32px;
     color: var(--font);
     font-weight: 800;
+    text-align: center;
 
 }
 .key-item-text{
@@ -817,4 +818,33 @@ footer{
   }
   .show{
       display: block !important;
+  }
+
+  /* IPHONE X*/
+  @media screen and (max-width: 415px){
+      .wr{
+          padding: 50px 10px;
+      }
+      .footer-nav-item {
+        margin-right: 8px;
+      }
+    #calc-button{
+          margin-bottom: 16px;
+      }
+  }
+
+    /* IPHONE 5*/
+  @media screen and (max-width: 320px){
+
+      .header-title {
+        margin-top: 50px;
+        font-size: 39px;
+      }
+      .header-description{
+          font-size: 20px;
+          line-height: 24px;
+      }
+      #calc-button{
+          margin-bottom: 57px;
+      }
   }
